@@ -153,8 +153,9 @@ ZMK_ADAPTIVE_KEY(
 };
 
 // Tap: num-word | double-tap: sticky num-layer | Hold: momentary num-layer.
+// Hold-preferred for LT5 (swapper), tap-preferred (forces tap before tapping term) for all other keys
 #define SMART_NUM &smart_num NUM 0
-ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
+ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "hold-preferred";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;
              hold-trigger-key-positions = <LT5>;)
 ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
