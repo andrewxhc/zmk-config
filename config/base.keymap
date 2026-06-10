@@ -16,6 +16,7 @@
 // Add repeat key
 // keymap drawing script (dsend name change)
 // Change symbol morphs
+// Study and make my own combos
 
 #define DEF 0
 #define QWER 1
@@ -173,7 +174,7 @@ ZMK_TRI_STATE(
 
 // Alt+Tab swapper, requires tri-state module.
 ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-              ignored-key-positions = <LT4 RT2 RM1 RM2 RM3>;)
+              ignored-key-positions = <LT4 RM1 RM2 RM3 RM4>;)
 
 // Define mod-morph with a *single* mod trigger for less repetition.
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
@@ -239,7 +240,7 @@ ZMK_BASE_LAYER(Dsend,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
         &kp LCTRL       &kp Z         &kp W         &kp M         &kp D         &kp B       ,   &comma_morph  &kp O         &kp Y         &kp K         &kp J           &kp RWIN    ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
-                                                    SMART_NUM     MAGIC_SHIFT   NAV_BSPC    ,   &lt SYM RET   &lt_spc NAV 0 &smart_mouse
+                                                    SMART_NUM     MAGIC_SHIFT   &lt NAV BSPC,   &lt NAV RET   &lt_spc SYM 0 &smart_mouse
     //                                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -270,7 +271,7 @@ ZMK_BASE_LAYER(Sym,
 // ADD SHORTCUTS TO THIS LAYER, fn layer most are duplicate/not needed, migrate to this
 ZMK_BASE_LAYER(Nav,
     //╭─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────╮
-        ___             &kp LG(PSCRN) &kp LA(PSCRN) &kp LG(LS(S)) ___           ___         ,   &kp PG_UP     NAV_BSPC      ___           NAV_DEL       ___             ___         ,
+        ___             &kp LG(PSCRN) &kp LA(PSCRN) &kp LG(LS(S)) ___           ___         ,   &kp PG_UP     &kp LA(D)     ___           ___           ___             ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
         &kp LC(HOME)    &kp LC(Y)     ___           &kp LC(A)     &kp LC(F)     ___         ,   &kp PG_DN     NAV_LEFT      NAV_UP        NAV_DOWN      NAV_RIGHT       &kp LC(END) ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
