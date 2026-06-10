@@ -12,9 +12,10 @@
   #define _BT_SEL_KEYS_ &trans &trans &trans &trans &trans
 #endif
 
-// Things to add:
-// Repeat key
+// Things to do:
+// Add repeat key
 // keymap drawing script (dsend name change)
+// Change symbol morphs
 
 #define DEF 0
 #define QWER 1
@@ -269,11 +270,11 @@ ZMK_BASE_LAYER(Sym,
 // ADD SHORTCUTS TO THIS LAYER, fn layer most are duplicate/not needed, migrate to this
 ZMK_BASE_LAYER(Nav,
     //╭─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────╮
-        ___             ___           ___           ___           ___           ___         ,   &kp PG_UP     NAV_BSPC      ___           NAV_DEL       ___             ___         ,
+        ___             &kp LG(PSCRN) &kp LA(PSCRN) &kp LG(LS(S)) ___           ___         ,   &kp PG_UP     NAV_BSPC      ___           NAV_DEL       ___             ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
         &kp LC(HOME)    &kp LC(Y)     ___           &kp LC(A)     &kp LC(F)     ___         ,   &kp PG_DN     NAV_LEFT      NAV_UP        NAV_DOWN      NAV_RIGHT       &kp LC(END) ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        ___             &kp LC(Z)     &kp LC(C)     &kp LC(X)     &kp LC(V)     ___         ,   &kp INS       &kp TAB       ___           ___           ___             ___         ,
+        ___             &kp LC(Z)     &kp LC(C)     &kp LC(X)     &kp LC(V)     ___         ,   &kp INS       &kp LC(T)     &kp LC(N)     &kp LC(LS(N)) ___             ___         ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
                                                     ___           ___           ___         ,   ___           CANCEL        ___
     //                                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
