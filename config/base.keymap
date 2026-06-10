@@ -118,22 +118,42 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
 &mt { MT_CORE };
 
+/*
 ZMK_HOLD_TAP(mt_home, bindings = <&masked_home>, <&kp>; MT_CORE)
 ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
+*/
 
-#define NAV_LEFT  &mt_home 0   LEFT  // Tap: left  | Long-tap: start of line.
-#define NAV_RIGHT &mt_end 0    RIGHT // Tap: right | Long-tap: end   of line.
-#define NAV_UP    &mt LC(HOME) UP    // Tap: up    | Long-tap: start of doc.
-#define NAV_DOWN  &mt LC(END)  DOWN  // Tap: down  | Long-tap: end   of doc.
-#define NAV_BSPC  &mt LC(BSPC) BSPC  // Tap: bspc  | Long-tap: delete word bwd.
-#define NAV_DEL   &mt LC(DEL)  DEL   // Tap: del   | Long-tap: delete word fwd.
+ZMK_MACRO(up_lines,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp UP &kp UP &kp UP &kp UP &kp UP>;
+)
 
-// Mask CTRL on left/right hold to avoid accidental jumps to start/end of doc.
+ZMK_MACRO(down_lines,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN>;
+)
+
+ZMK_HOLD_TAP(mt_up_lines, bindings = <&up_lines>, <&kp>; MT_CORE)
+ZMK_HOLD_TAP(mt_down_lines, bindings = <&down_lines>, <&kp>; MT_CORE)
+
+#define NAV_LEFT  &mt LC(LEFT)     LEFT  // Tap: left  | Long-tap: previous word.
+#define NAV_RIGHT &mt LC(RIGHT)    RIGHT // Tap: right | Long-tap: next word.
+#define NAV_UP    &mt_up_lines 0   UP    // Tap: up    | Long-tap: up 5 lines.
+#define NAV_DOWN  &mt_down_lines 0 DOWN  // Tap: down  | Long-tap: down 5 lines.
+#define NAV_BSPC  &mt LC(BSPC)     BSPC  // Tap: bspc  | Long-tap: delete word bwd.
+#define NAV_DEL   &mt LC(DEL)      DEL   // Tap: del   | Long-tap: delete word fwd.
+
+/*
+Mask CTRL on left/right hold to avoid accidental jumps to start/end of doc.
 #define MASK_MODS(NAME, MODS, BINDING)                                         \
   ZMK_MOD_MORPH(NAME, bindings = <BINDING>, <BINDING>; mods = <MODS>;)
 
 MASK_MODS(masked_home, (MOD_LCTL), &kp HOME)
 MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
+*/
+
 
 /* Magic-shift & auto-layers */
 
@@ -274,9 +294,9 @@ ZMK_BASE_LAYER(Sym,
 // ADD SHORTCUTS TO THIS LAYER, fn layer most are duplicate/not needed, migrate to this
 ZMK_BASE_LAYER(Nav,
     //╭─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────╮
-        ___             &kp LG(PSCRN) &kp LA(PSCRN) &kp LG(LS(S)) ___           ___         ,   &kp PG_UP     &kp LA(D)     ___           ___           ___             ___         ,
+        ___             &kp LG(PSCRN) &kp LA(PSCRN) &kp LG(LS(S)) ___           ___         ,   ___           &kp LA(D)     &kp PG_UP     &kp PG_DN     ___             ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        &kp LC(HOME)    &kp LC(Y)     ___           &kp LC(A)     &kp LC(F)     ___         ,   &kp PG_DN     NAV_LEFT      NAV_UP        NAV_DOWN      NAV_RIGHT       &kp LC(END) ,
+        ___             &kp LC(Y)     ___           &kp LC(A)     &kp LC(F)     ___         ,   ___           NAV_LEFT      NAV_UP        NAV_DOWN      NAV_RIGHT       ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
         ___             &kp LC(Z)     &kp LC(C)     &kp LC(X)     &kp LC(V)     ___         ,   &kp INS       &kp LC(T)     &kp LC(N)     &kp LC(LS(N)) ___             ___         ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
