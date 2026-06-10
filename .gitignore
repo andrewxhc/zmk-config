@@ -1,5 +1,6 @@
 old_base.keymap
 old_zen.keymap.build
+.tmp-miryoku-zmk
 .direnv
 .west
 modules
