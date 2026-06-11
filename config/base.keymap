@@ -13,13 +13,12 @@
 #endif
 
 // Things to do:
-// Add repeat key
 // keymap drawing script (dsend name change)
+// layer names inconsistency
 // Change symbol morphs
 // Study and make my own combos
 // OS based shortcuts (check Miryoku)
-// layer names inconsistency
-// 
+// potentially replace smart_mouse
 
 #define DEF 0
 #define QWER 1
@@ -206,13 +205,13 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
   ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
                 bindings = <BINDING1>, <BINDING2>;)
 
-// Tap: comma | Shift + tap: semicolon | Ctrl + shift + tap: <.
+// Tap: comma | Shift + tap: question mark | Ctrl + shift + tap: underscore.
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
-SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
+SIMPLE_MORPH(comma_inner_morph, CTL, &kp QUESTION, &kp UNDER)
 
-// Tap: dot | Shift + tap: colon | Ctrl + shift + tap: >.
+// Tap: dot | Shift + tap: exclamation mark | Ctrl + shift + tap: grave.
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
-SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
+SIMPLE_MORPH(dot_inner_morph, CTL, &kp EXCL, &kp GRAVE)
 
 // Tap: qmark | Shift + tap: excl.
 SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
