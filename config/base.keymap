@@ -143,7 +143,7 @@ ZMK_HOLD_TAP(ht,
 
 ZMK_HOLD_TAP(ht_home_end,
     HT_CORE
-    tapping-term-ms = <1000>;
+    tapping-term-ms = <800>;
 )
 
 #define HT_LEFT  &ht LC(LEFT)          LEFT  // Tap: left  | Long-tap: previous word.
