@@ -15,10 +15,10 @@
 // Things to do:
 // keymap drawing script (dsend name change)
 // layer names inconsistency
-// Change symbol morphs
 // Study and make my own combos
 // OS based shortcuts (check Miryoku)
 // potentially replace smart_mouse
+// Meh + super with autohotkey/keyboard maestro for super fast window switching (https://www.youtube.com/watch?v=Px0_8J0Wb-s)
 
 #define DEF 0
 #define QWER 1
@@ -100,6 +100,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 #include "combos.dtsi" // Must be sourced after HRM-combo hack.
 #include "leader.dtsi"
 #include "mouse.dtsi"
+#include "oskeys.dtsi"
 
 /* Nav cluster */
 
@@ -150,8 +151,8 @@ ZMK_HOLD_TAP(ht_home_end,
 #define HT_RIGHT &ht LC(RIGHT)         RIGHT // Tap: right | Long-tap: next word.
 #define HT_UP    &ht LC(UP)            UP    // Tap: up    | Long-tap: ctrl-up.
 #define HT_DOWN  &ht LC(DOWN)          DOWN  // Tap: down  | Long-tap: ctrl-down.
-#define HT_HOME  &ht_home_end LC(HOME) HOME  // Tap: home  | Long-tap: start of doc.
-#define HT_END   &ht_home_end LC(END)  END   // Tap: end   | Long-tap: end of doc.
+#define HT_HOME  OS_HT_HOME                  // Tap: home  | Long-tap: OS line start.
+#define HT_END   OS_HT_END                   // Tap: end   | Long-tap: OS line end.
 #define HT_BSPC  &ht LC(BSPC)          BSPC  // Tap: bspc  | Long-tap: delete word bwd.
 #define HT_DEL   &ht LC(DEL)           DEL   // Tap: del   | Long-tap: delete word fwd.
 
@@ -333,7 +334,7 @@ ZMK_BASE_LAYER(Sys,
     //╭─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────╮
         ___                                        _BT_SEL_KEYS_                            ,   &kp C_PREV    &kp C_PP      &kp C_NEXT    &kp C_VOL_UP  &kp F22         ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        ___             ___           ___           ___           ___           ___         ,   DSK_PREV      DSK_MGR       DSK_NEXT      &kp C_VOL_DN  &kp F23         &kp F24     ,
+        OS_WIN_SEL      OS_MAC_SEL    OS_LIN_SEL    ___           ___           ___         ,   DSK_PREV      DSK_MGR       DSK_NEXT      &kp C_VOL_DN  &kp F23         &kp F24     ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
         ___             ___           PIN_APP       PIN_WIN       &bootloader   &sys_reset  ,   &sys_reset    &bootloader   ___           &kp C_MUTE    &to DEF         &to QWER    ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
