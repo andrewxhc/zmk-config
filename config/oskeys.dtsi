@@ -6,15 +6,13 @@
 #define OS_LIN_SEL &os_sel OS_LIN
 
 // OS-aware navigation helpers.
-#define OS_LINE_START &ok_line_start
-#define OS_LINE_END   &ok_line_end
 #define OS_HT_START   &os_ht_start 0 0     // Tap: line start | Hold: document start.
 #define OS_HT_END     &os_ht_end 0 0       // Tap: line end   | Hold: document end.
 #define OS_HT_LEFT    &os_ht_left 0 LEFT   // Tap: left       | Hold: previous word.
 #define OS_HT_RIGHT   &os_ht_right 0 RIGHT // Tap: right      | Hold: next word.
 #define OS_HT_UP      &os_ht_up 0 UP       // Tap: up         | Hold: Ctrl/Option+Up.
 #define OS_HT_DOWN    &os_ht_down 0 DOWN   // Tap: down       | Hold: Ctrl/Option+Down.
-#define OS_HT_BSPC    &os_ht_bspc 0 BSPC  // Tap: backspace  | Hold: delete previous word.
+#define OS_HT_BSPC    &os_ht_bspc 0 BSPC   // Tap: backspace  | Hold: delete previous word.
 #define OS_HT_DEL     &os_ht_del 0 DEL     // Tap: delete     | Hold: delete next word.
 
 / {
@@ -70,6 +68,66 @@
       compatible = "zmk,behavior-os-key";
       #binding-cells = <0>;
       bindings = <&kp LC(DOWN)>, <&kp LA(DOWN)>, <&kp LC(DOWN)>;
+    };
+
+    ok_undo: os_key_undo {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(Z)>, <&kp LG(Z)>, <&kp LC(Z)>;
+    };
+
+    ok_redo: os_key_redo {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(Y)>, <&kp LS(LG(Z))>, <&kp LS(LC(Z))>;
+    };
+
+    ok_cut: os_key_cut {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(X)>, <&kp LG(X)>, <&kp LC(X)>;
+    };
+
+    ok_copy: os_key_copy {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(C)>, <&kp LG(C)>, <&kp LC(C)>;
+    };
+
+    ok_paste: os_key_paste {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(V)>, <&kp LG(V)>, <&kp LC(V)>;
+    };
+
+    ok_sel_all: os_key_select_all {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(A)>, <&kp LG(A)>, <&kp LC(A)>;
+    };
+
+    ok_find: os_key_find {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(F)>, <&kp LG(F)>, <&kp LC(F)>;
+    };
+
+    ok_new_tab: os_key_new_tab {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(T)>, <&kp LG(T)>, <&kp LC(T)>;
+    };
+
+    ok_new_win: os_key_new_window {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(N)>, <&kp LG(N)>, <&kp LC(N)>;
+    };
+
+    ok_priv_win: os_key_private_window {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LS(LC(N))>, <&kp LS(LG(N))>, <&kp LS(LC(N))>;
     };
 
     ok_word_bspc: os_key_word_bspc {
