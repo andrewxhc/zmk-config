@@ -8,8 +8,14 @@
 // OS-aware navigation helpers.
 #define OS_LINE_START &ok_line_start
 #define OS_LINE_END   &ok_line_end
-#define OS_HT_HOME    &os_ht_line_start 0 0
-#define OS_HT_END     &os_ht_line_end 0 0
+#define OS_HT_START   &os_ht_start 0 0     // Tap: line start | Hold: document start.
+#define OS_HT_END     &os_ht_end 0 0       // Tap: line end   | Hold: document end.
+#define OS_HT_LEFT    &os_ht_left 0 LEFT   // Tap: left       | Hold: previous word.
+#define OS_HT_RIGHT   &os_ht_right 0 RIGHT // Tap: right      | Hold: next word.
+#define OS_HT_UP      &os_ht_up 0 UP       // Tap: up         | Hold: Ctrl/Option+Up.
+#define OS_HT_DOWN    &os_ht_down 0 DOWN   // Tap: down       | Hold: Ctrl/Option+Down.
+#define OS_HT_BSPC    &os_ht_bspc 0 BSPC  // Tap: backspace  | Hold: delete previous word.
+#define OS_HT_DEL     &os_ht_del 0 DEL     // Tap: delete     | Hold: delete next word.
 
 / {
   behaviors {
@@ -42,7 +48,43 @@
       bindings = <&kp LC(END)>, <&kp LG(DOWN)>, <&kp LC(END)>;
     };
 
-    os_ht_line_start: os_ht_line_start {
+    ok_prev_word: os_key_prev_word {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(LEFT)>, <&kp LA(LEFT)>, <&kp LC(LEFT)>;
+    };
+
+    ok_next_word: os_key_next_word {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(RIGHT)>, <&kp LA(RIGHT)>, <&kp LC(RIGHT)>;
+    };
+
+    ok_up: os_key_up {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(UP)>, <&kp LA(UP)>, <&kp LC(UP)>;
+    };
+
+    ok_down: os_key_down {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(DOWN)>, <&kp LA(DOWN)>, <&kp LC(DOWN)>;
+    };
+
+    ok_word_bspc: os_key_word_bspc {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(BSPC)>, <&kp LA(BSPC)>, <&kp LC(BSPC)>;
+    };
+
+    ok_word_del: os_key_word_del {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(DEL)>, <&kp LA(DEL)>, <&kp LC(DEL)>;
+    };
+
+    os_ht_start: os_ht_start {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       flavor = "tap-preferred";
@@ -51,13 +93,67 @@
       bindings = <&ok_doc_start>, <&ok_line_start>;
     };
 
-    os_ht_line_end: os_ht_line_end {
+    os_ht_end: os_ht_end {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       flavor = "tap-preferred";
       quick-tap-ms = <220>;
       tapping-term-ms = <800>;
       bindings = <&ok_doc_end>, <&ok_line_end>;
+    };
+
+    os_ht_left: os_ht_left {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      quick-tap-ms = <220>;
+      tapping-term-ms = <220>;
+      bindings = <&ok_prev_word>, <&kp>;
+    };
+
+    os_ht_right: os_ht_right {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      quick-tap-ms = <220>;
+      tapping-term-ms = <220>;
+      bindings = <&ok_next_word>, <&kp>;
+    };
+
+    os_ht_up: os_ht_up {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      quick-tap-ms = <220>;
+      tapping-term-ms = <220>;
+      bindings = <&ok_up>, <&kp>;
+    };
+
+    os_ht_down: os_ht_down {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      quick-tap-ms = <220>;
+      tapping-term-ms = <220>;
+      bindings = <&ok_down>, <&kp>;
+    };
+
+    os_ht_bspc: os_ht_bspc {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      quick-tap-ms = <220>;
+      tapping-term-ms = <220>;
+      bindings = <&ok_word_bspc>, <&kp>;
+    };
+
+    os_ht_del: os_ht_del {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      quick-tap-ms = <220>;
+      tapping-term-ms = <220>;
+      bindings = <&ok_word_del>, <&kp>;
     };
   };
 };

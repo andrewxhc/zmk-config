@@ -147,16 +147,6 @@ ZMK_HOLD_TAP(ht_home_end,
     tapping-term-ms = <800>;
 )
 
-#define HT_LEFT  &ht LC(LEFT)          LEFT  // Tap: left  | Long-tap: previous word.
-#define HT_RIGHT &ht LC(RIGHT)         RIGHT // Tap: right | Long-tap: next word.
-#define HT_UP    &ht LC(UP)            UP    // Tap: up    | Long-tap: ctrl-up.
-#define HT_DOWN  &ht LC(DOWN)          DOWN  // Tap: down  | Long-tap: ctrl-down.
-#define HT_HOME  OS_HT_HOME                  // Tap: home  | Long-tap: OS line start.
-#define HT_END   OS_HT_END                   // Tap: end   | Long-tap: OS line end.
-#define HT_BSPC  &ht LC(BSPC)          BSPC  // Tap: bspc  | Long-tap: delete word bwd.
-#define HT_DEL   &ht LC(DEL)           DEL   // Tap: del   | Long-tap: delete word fwd.
-
-
 /* Magic-shift & auto-layers */
 
 // Tap: repeat after alpha, else sticky-shift |
@@ -261,7 +251,7 @@ ZMK_BASE_LAYER(Dsend,
     //╭─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────╮
         &ht ESC TAB     &kp X         &kp C         &kp L         &kp F         &kp V       ,   &kp SQT       &kp SEMI      &kp U         &kp P         &kp Q           &mo SYS     ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        HT_HOME         &hml LGUI R   &hml LALT S   &hml LSHFT N  &hml LCTRL T  &kp G       ,   &dot_morph    &hmr LCTRL A  &hmr RSHFT E  &hmr LALT H   &hmr LGUI I     HT_END      ,
+        OS_HT_START     &hml LGUI R   &hml LALT S   &hml LSHFT N  &hml LCTRL T  &kp G       ,   &dot_morph    &hmr LCTRL A  &hmr RSHFT E  &hmr LALT H   &hmr LGUI I     OS_HT_END   ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
         &kp LCTRL       &kp Z         &kp W         &kp M         &kp D         &kp B       ,   &comma_morph  &kp O         &kp Y         &kp K         &kp J           &kp RWIN    ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
@@ -273,11 +263,11 @@ ZMK_BASE_LAYER(Qwerty,
     //╭─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────╮
         ___             &kp Q         &kp W         &kp E         &kp R         &kp T       ,   &kp Y         &kp U         &kp I         &kp O         &kp P           &mo SYS     ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        HT_HOME         &hml LGUI A   &hml LALT S   &hml LSHFT D  &hml LCTRL F  &kp G       ,   &kp H         &hmr LCTRL J  &hmr RSHFT K  &hmr LALT L   &hmr LGUI T     HT_END      ,
+        OS_HT_START     &hml LGUI A   &hml LALT S   &hml LSHFT D  &hml LCTRL F  &kp G       ,   &kp H         &hmr LCTRL J  &hmr RSHFT K  &hmr LALT L   &hmr LGUI T     OS_HT_END   ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
         &kp LCTRL       &kp Z         &kp X         &kp C         &kp V         &kp B       ,   &kp N         &kp M         &comma_morph  &dot_morph    ___             &kp RWIN    ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
-                                                    SMART_NUM     MAGIC_SHIFT   HT_BSPC     ,   &lt SYM RET   &lt_spc NAV 0 &smart_mouse
+                                                    SMART_NUM     MAGIC_SHIFT   OS_HT_BSPC  ,   &lt SYM RET   &lt_spc NAV 0 &smart_mouse
     //                                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -285,7 +275,7 @@ ZMK_BASE_LAYER(Sym,
     //╭─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────╮
         ___             &kp AMPS      &kp AT        &kp HASH      &kp DOLLAR    &kp CARET   ,   &kp DQT       &kp LPAR      &kp RPAR      &kp LBKT      &kp RBKT        ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        &kp PERCENT     &kp PLUS      &kp MINUS     &kp STAR      &kp SLASH     &kp EQUAL   ,   &kp EXCL      HT_LEFT       HT_UP         HT_DOWN       HT_RIGHT        ___         ,
+        &kp PERCENT     &kp PLUS      &kp MINUS     &kp STAR      &kp SLASH     &kp EQUAL   ,   &kp EXCL      OS_HT_LEFT    OS_HT_UP      OS_HT_DOWN    OS_HT_RIGHT     ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
         ___             &kp TILDE     &kp PIPE      &kp UNDER     &kp COLON     &kp BACKSLASH,  &kp QUESTION  &kp LBRC      &kp RBRC      &kp LT        &kp GT          ___         ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
@@ -298,7 +288,7 @@ ZMK_BASE_LAYER(Nav,
     //╭─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────╮
         ___             &kp LG(PSCRN) &kp LA(PSCRN) &kp LG(LS(S)) ___           ___         ,   ___           &kp LA(D)     &kp PG_UP     &kp PG_DN     &kp INS         ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        ___             &kp LC(Y)     ___           &kp LC(A)     &kp LC(F)     ___         ,   ___           HT_LEFT       HT_UP         HT_DOWN       HT_RIGHT        ___         ,
+        ___             &kp LC(Y)     ___           &kp LC(A)     &kp LC(F)     ___         ,   ___           OS_HT_LEFT    OS_HT_UP      OS_HT_DOWN    OS_HT_RIGHT     ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
         ___             &kp LC(Z)     &kp LC(C)     &kp LC(X)     &kp LC(V)     ___         ,   ___           &kp LC(T)     &kp LC(N)     &kp LC(LS(N)) ___             ___         ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
