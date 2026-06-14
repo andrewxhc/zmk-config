@@ -17,6 +17,20 @@
 
 / {
   macros {
+#ifdef CONFIG_WIRELESS
+    bt0_win: bluetooth_0_windows {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&bt BT_SEL 0>, <&os_sel OS_WIN>;
+    };
+
+    bt1_mac: bluetooth_1_macos {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&bt BT_SEL 1>, <&os_sel OS_MAC>;
+    };
+#endif
+
     ss_win_mac: screenshot_window_mac {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
