@@ -33,6 +33,12 @@
       #binding-cells = <1>;
     };
 
+    ok_app_mod: os_key_app_modifier {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kt LALT>, <&kt LGUI>, <&kt LALT>;
+    };
+
     ok_line_start: os_key_line_start {
       compatible = "zmk,behavior-os-key";
       #binding-cells = <0>;
