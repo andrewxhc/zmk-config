@@ -16,6 +16,17 @@
 #define OS_HT_DEL     &os_ht_del 0 DEL     // Tap: delete     | Hold: delete next word.
 
 / {
+  macros {
+    ss_win_mac: screenshot_window_mac {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      wait-ms = <50>;
+      tap-ms = <20>;
+      bindings = <&macro_tap &kp LS(LG(N4))>,
+                 <&macro_tap &kp SPACE>;
+    };
+  };
+
   behaviors {
     os_sel: os_selector {
       compatible = "zmk,behavior-os-selector";
@@ -128,6 +139,30 @@
       compatible = "zmk,behavior-os-key";
       #binding-cells = <0>;
       bindings = <&kp LS(LC(N))>, <&kp LS(LG(N))>, <&kp LS(LC(N))>;
+    };
+
+    ok_addr_bar: os_key_address_bar {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LA(D)>, <&kp LG(L)>, <&kp LC(L)>;
+    };
+
+    ok_ss_full: os_key_screenshot_full {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LG(PSCRN)>, <&kp LS(LG(N3))>, <&kp PSCRN>;
+    };
+
+    ok_ss_win: os_key_screenshot_window {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LA(PSCRN)>, <&ss_win_mac>, <&kp LA(PSCRN)>;
+    };
+
+    ok_ss_region: os_key_screenshot_region {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LG(LS(S))>, <&kp LS(LG(N4))>, <&kp LS(PSCRN)>;
     };
 
     ok_word_bspc: os_key_word_bspc {
