@@ -53,6 +53,30 @@
       bindings = <&kt LALT>, <&kt LGUI>, <&kt LALT>;
     };
 
+    ok_launcher: os_key_launcher {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LG(S)>, <&kp LG(SPACE)>, <&kp LGUI>;
+    };
+
+    ok_dsk_prev: os_key_desktop_previous {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LG(LC(LEFT))>, <&kp LC(LEFT)>, <&kp LG(LC(LEFT))>;
+    };
+
+    ok_dsk_mgr: os_key_desktop_manager {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LG(TAB)>, <&kp LC(UP)>, <&kp LA(GRAVE)>;
+    };
+
+    ok_dsk_next: os_key_desktop_next {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LG(LC(RIGHT))>, <&kp LC(RIGHT)>, <&kp LG(LC(RIGHT))>;
+    };
+
     ok_line_start: os_key_line_start {
       compatible = "zmk,behavior-os-key";
       #binding-cells = <0>;
