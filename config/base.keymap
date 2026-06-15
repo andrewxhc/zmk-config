@@ -196,6 +196,13 @@ ZMK_TRI_STATE(
 ZMK_TRI_STATE(swapper, bindings = <&ok_app_mod>, <&kp TAB>, <&ok_app_mod>;
               ignored-key-positions = <LT4 RM1 RM2 RM3 RM4>;)
 
+ZMK_MOD_MORPH(bspc_morph, bindings = <&kp BSPC>, <&ok_word_bspc>;
+              mods = <(MOD_LCTL | MOD_RCTL)>;)
+
+ZMK_HOLD_TAP(lt_bspc, bindings = <&mo>, <&bspc_morph>;
+             flavor = "balanced"; tapping-term-ms = <200>;
+             quick-tap-ms = <QUICK_TAP_MS>;)
+
 // Define mod-morph with a *single* mod trigger for less repetition.
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
   ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
@@ -260,7 +267,7 @@ ZMK_BASE_LAYER(Dsend,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
         &kp LCTRL       &kp Z         &kp W         &kp M         &kp D         &kp B       ,   &comma_morph  &kp O         &kp Y         &kp K         &kp J           &kp RWIN    ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
-                                                    APP_LAUNCHER  MAGIC_SHIFT   &lt NAV BSPC,   &lt NAV RET   &lt_spc SYM 0 SMART_NUM
+                                                    APP_LAUNCHER  MAGIC_SHIFT   &lt_bspc NAV,   &lt NAV RET   &lt_spc SYM 0 SMART_NUM
     //                                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
 
