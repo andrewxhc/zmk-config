@@ -56,7 +56,8 @@ manifest:
       revision: 1a6dbc797a46c4a61c3c71a7a9d013a5d5aee49e # main (4/19/2026)
     - name: oskey
       remote: mentaldesk
-      revision: main
+      path: modules/zmk/oskey
+      revision: 75417d5a20007d5406b979cb2ec4a40521031d99 # main (6/15/2026)
 
     # Only source necessary Zephyr modules. Remove this entire section to restore
     # the default (needed for less common hardware).
