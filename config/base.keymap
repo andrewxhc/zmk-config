@@ -191,6 +191,13 @@ ZMK_TRI_STATE(
         <LT1 LT2 LH0 LH1 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 RH0 RH1>;
     ignored-layers = <MOUSE NAV FN>;)
 
+// Smart-button, requires tri-state module.
+ZMK_TRI_STATE(
+    smart_button, bindings = <&tog BUTTON>, <&none>, <&tog BUTTON>;
+    ignored-key-positions =
+        <LM4 LM3 LM2 LM1 RM1 RM2 RM3 RM4 LH2 LH1 LH0 RH0 RH1 RH2>;
+    ignored-layers = <BUTTON NAV FN>;)
+
 /* Custom behaviors */
 
 // OS-aware app swapper, requires tri-state module.
@@ -339,7 +346,7 @@ ZMK_BASE_LAYER(Sys,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
         ___             OS_WIN_SEL    OS_MAC_SEL    OS_LIN_SEL    ___           ___         ,   ___           ___           ___           &kp C_VOL_DN  &kp F23         &kp F24     ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        ___             ___           ___           ___           &bootloader   &sys_reset  ,   &sys_reset    &bootloader   ___           &kp C_MUTE    &to DEF         &to QWER    ,
+        ___             &smart_button &smart_mouse  ___           &bootloader   &sys_reset  ,   &sys_reset    &bootloader   ___           &kp C_MUTE    &to DEF         &to QWER    ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
                                                     ___           ___           ___         ,   ___           ___           ___
     //                                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
