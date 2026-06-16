@@ -19,6 +19,7 @@
 // OS based shortcuts (check Miryoku)
 // potentially replace smart_mouse
 // Meh + super with autohotkey/keyboard maestro for super fast window switching (https://www.youtube.com/watch?v=Px0_8J0Wb-s)
+// balanced vs tap pref
 
 #define DEF 0
 #define QWER 1
@@ -267,7 +268,7 @@ ZMK_BASE_LAYER(Dsend,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
         &kp LCTRL       &kp Z         &kp W         &kp M         &kp D         &kp B       ,   &comma_morph  &kp O         &kp Y         &kp K         &kp J           &kp RWIN    ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
-                                                    APP_LAUNCHER  MAGIC_SHIFT   &lt_bspc NAV,   &lt NAV RET   &lt_spc SYM 0 SMART_NUM
+                                                    APP_LAUNCHER  MAGIC_SHIFT   &lt_bspc NAV 0, &lt NAV RET   &lt_spc SYM 0 SMART_NUM
     //                                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
 
