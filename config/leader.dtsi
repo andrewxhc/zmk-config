@@ -40,6 +40,10 @@ ZMK_LEADER_SEQUENCE(el_chi,     &uc UC_EL_CHI,        E C)  // χ
 ZMK_LEADER_SEQUENCE(el_psi,     &uc UC_EL_PSI,        E Y)  // ψ
 ZMK_LEADER_SEQUENCE(el_omega,   &uc UC_EL_OMEGA,      E W)  // ω
 
+// Base layer selection
+ZMK_LEADER_SEQUENCE(dsend,      &to DEF,        D S E N D)
+ZMK_LEADER_SEQUENCE(qwerty,     &to QWER,       Q W E R T Y)
+
 // BLE and USB
 #ifdef CONFIG_WIRELESS
 ZMK_LEADER_SEQUENCE(usb,        &out OUT_USB,   U S B)
