@@ -21,14 +21,14 @@
 // Meh + super with autohotkey/keyboard maestro for super fast window switching (https://www.youtube.com/watch?v=Px0_8J0Wb-s)
 // balanced vs tap pref
 
-#define DEF 0
-#define QWER 1
+#define DSEND 0
+#define QWERTY 1
 #define SYM 2
 #define NAV 3
 #define NUM 4
 #define SYS 5
-#define MOUSE 6
-#define BUTTON 7
+#define MOU 6
+#define BTN 7
 #define APP 8
 #define FN 9
 
@@ -185,16 +185,16 @@ ZMK_HOLD_TAP(app_launcher, bindings = <&mo>, <&ok_launcher>;
 
 // Smart-mouse, requires tri-state module.
 ZMK_TRI_STATE(
-    smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
+    smart_mouse, bindings = <&tog MOU>, <&none>, <&tog MOU>;
     ignored-key-positions =
         <LT1 LT2 LH0 LH1 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 RH0 RH1>;
-    ignored-layers = <MOUSE NAV APP NUM FN>;)
+    ignored-layers = <MOU NAV APP NUM FN>;)
 
 // Smart-button, requires tri-state module.
 ZMK_TRI_STATE(
-    smart_button, bindings = <&tog BUTTON>, <&none>, <&tog BUTTON>;
+    smart_button, bindings = <&tog BTN>, <&none>, <&tog BTN>;
     ignored-key-positions = <KEYS_L KEYS_R THUMBS>;
-    ignored-layers = <BUTTON NAV APP NUM FN>;)
+    ignored-layers = <BTN NAV APP NUM FN>;)
 
 /* Custom behaviors */
 
@@ -333,13 +333,13 @@ ZMK_BASE_LAYER(Sys,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
         ___             OS_WIN_SEL    OS_MAC_SEL    OS_LIN_SEL    ___           ___         ,   &kp C_VOL_DN  &kp C_MUTE    &kp C_VOL_UP  ___           &kp F23         &kp F24     ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        ___             &smart_button &smart_mouse  ___           &bootloader   &sys_reset  ,   &sys_reset    &bootloader   ___           ___           &to DEF         &to QWER    ,
+        ___             &smart_button &smart_mouse  ___           &bootloader   &sys_reset  ,   &sys_reset    &bootloader   ___           ___           &to DSEND       &to QWERTY  ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
                                                     ___           ___           ___         ,   ___           ___           ___
     //                                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
 
-ZMK_BASE_LAYER(Mouse,
+ZMK_BASE_LAYER(Mou,
     //╭─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────╮
         ___             ___           ___           ___           ___           ___         ,   ___           &kp PG_UP     U_MS_U         &kp PG_DN    ___             ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
@@ -347,11 +347,11 @@ ZMK_BASE_LAYER(Mouse,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
         ___             ___           ___           ___           ___           ___         ,   ___           &mkp LCLK     &mkp MCLK      &mkp RCLK    ___             ___         ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
-                                                    ___           ___           ___         ,   U_WH_U        U_WH_D        &tog MOUSE
+                                                    ___           ___           ___         ,   U_WH_U        U_WH_D        &tog MOU
     //                                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
 
-ZMK_BASE_LAYER(Button,
+ZMK_BASE_LAYER(Btn,
     //╭─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────╮
         XXX             &ok_undo      &ok_cut       &ok_copy      &ok_paste     &ok_redo    ,   &ok_redo      &ok_paste     &ok_copy      &ok_cut       &ok_undo        XXX         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
