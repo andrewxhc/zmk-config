@@ -68,17 +68,17 @@ draw: _check_yq_version
         def is_transparent: type == "object" and (.type == "trans" or .type == "held");
         .layers = {
         Dsend: [
-            [.layers.Dsend, .layers.Nav, .layers.Fn, .layers.Num, .layers.Sys] | transpose[] |
+            [.layers.Dsend, .layers.Nav, .layers.App, .layers.Num, .layers.Sym] | transpose[] |
             (.[0] | if type == "string" then {t: .} else . end) as $base |
             (.[1] | if is_transparent then null else extract_label end) as $nav |
-            (.[2] | if is_transparent then null else extract_label end) as $fn |
+            (.[2] | if is_transparent then null else extract_label end) as $app |
             (.[3] | if is_transparent then null else extract_label end) as $num |
-            (.[4] | if is_transparent then null else extract_label end) as $sys |
+            (.[4] | if is_transparent then null else extract_label end) as $sym |
             $base
             + (if $nav == null then {} else {tr: $nav} end)
-            + (if $fn == null then {} else {tl: $fn} end)
+            + (if $app == null then {} else {tl: $app} end)
             + (if $num == null then {} else {bl: $num} end)
-            + (if $sys == null then {} else {br: $sys} end)
+            + (if $sym == null then {} else {br: $sym} end)
         ],
         Combos: .layers.Combos
         } |
