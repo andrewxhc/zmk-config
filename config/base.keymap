@@ -196,10 +196,9 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 #define CANCEL    &kp K_CANCEL            // Cancel caps-word & auto-layers.
 #define DSK_PREV  &ok_dsk_prev            // Previous desktop.
 #define DSK_NEXT  &ok_dsk_next            // Next desktop.
-#define PIN_WIN   &kp LG(LC(LS(Q)))       // Pin window across desktops.
-#define PIN_APP   &kp LG(LC(LS(A)))       // Pin application across desktops.
 #define DSK_MGR   &ok_dsk_mgr             // Desktop manager.
-#define VOL_DOWN  &kp C_VOL_DN
+// #define PIN_WIN &kp LG(LC(LS(Q)))         // Pin window across desktops.
+// #define PIN_APP &kp LG(LC(LS(A)))         // Pin application across desktops.
 
 /* Keymap */
 
@@ -314,7 +313,7 @@ ZMK_BASE_LAYER(App,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
         ___             ___           ___           ___           ___           ___         ,   DSK_PREV      DSK_MGR       DSK_NEXT      ___           ___             ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        ___             ___           PIN_APP       PIN_WIN       ___           ___         ,   ___           ___           ___           ___           ___             ___         ,
+        ___             ___           ___           ___           ___           ___         ,   ___           ___           ___           ___           ___             ___         ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
                                                     ___           ___           ___         ,   ___           ___           ___
     //                                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
