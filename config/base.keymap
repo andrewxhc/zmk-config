@@ -203,23 +203,23 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 // #define PIN_WIN &kp LG(LC(LS(Q)))         // Pin window across desktops.
 // #define PIN_APP &kp LG(LC(LS(A)))         // Pin application across desktops.
 
-// Hyper key shortcuts
-#define HYPER(k)     &kp LG(LC(LS(LA(k))))
-#define HY_A         HYPER(A)
-#define HY_B         HYPER(B)
-#define HY_C         HYPER(C)
-#define HY_D         HYPER(D)
-#define HY_E         HYPER(E)
-#define HY_F         HYPER(F)
-#define HY_G         HYPER(G)
-#define HY_H         HYPER(H)
-#define HY_I         HYPER(I)
-#define HY_J         HYPER(J)
-#define HY_K         HYPER(K)
-#define HY_L         HYPER(L)
-#define HY_M         HYPER(M)
-#define HY_N         HYPER(N)
-#define HY_O         HYPER(O)
+// Meh key shortcuts.
+#define MEH(k)       &kp LC(LS(LA(k)))
+#define MEH_A        MEH(A)
+#define MEH_B        MEH(B)
+#define MEH_C        MEH(C)
+#define MEH_D        MEH(D)
+#define MEH_E        MEH(E)
+#define MEH_F        MEH(F)
+#define MEH_G        MEH(G)
+#define MEH_H        MEH(H)
+#define MEH_I        MEH(I)
+#define MEH_J        MEH(J)
+#define MEH_K        MEH(K)
+#define MEH_L        MEH(L)
+#define MEH_M        MEH(M)
+#define MEH_N        MEH(N)
+#define MEH_O        MEH(O)
 
 
 /* Keymap */
@@ -331,11 +331,11 @@ ZMK_BASE_LAYER(Btn,
 
 ZMK_BASE_LAYER(App,
     //╭─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────╮
-        &swapper      &kp LS(TAB)     ___           ___           ___           ___         ,   HY_A          HY_B          HY_C          HY_D          HY_E            ___         ,
+        &swapper      &kp LS(TAB)     ___           ___           ___           ___         ,   MEH_A         MEH_B         MEH_C         MEH_D         MEH_E           ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        OS_TILE_LEFT    ___           ___           ___           ___           ___         ,   HY_F          HY_G          HY_H          HY_I          HY_J            OS_TILE_RIGHT,
+        OS_TILE_LEFT    ___           ___           ___           ___           ___         ,   MEH_F         MEH_G         MEH_H         MEH_I         MEH_J           OS_TILE_RIGHT,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        ___             ___           OS_DSK_PREV   OS_DSK_MGR    OS_DSK_NEXT   ___         ,   HY_K          HY_L          HY_M          HY_N          HY_O            ___         ,
+        ___             ___           OS_DSK_PREV   OS_DSK_MGR    OS_DSK_NEXT   ___         ,   MEH_K         MEH_L         MEH_M         MEH_N         MEH_O           ___         ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
                                                     ___           ___           ___         ,   OS_TILE_RST   OS_TILE_FILL  ___
     //                                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯

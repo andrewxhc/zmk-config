@@ -16,13 +16,13 @@ ActivateOrRun(windowQuery, runTarget) {
     }
 }
 
-; Hyper app launchers from the App layer.
-#!^+g::ActivateOrRun("ahk_exe zen.exe", "zen.exe")
-#!^+h::ActivateOrRun("ahk_exe Code.exe", "Code.exe")
-#!^+i::ActivateOrRun("ahk_exe Discord.exe", LocalAppData "\Discord\Update.exe --processStart Discord.exe")
-#!^+j::ActivateOrRun("ahk_exe Notion.exe", LocalAppData "\Programs\Notion\Notion.exe")
-#!^+c::ActivateOrRun("ahk_exe Codex.exe", "Codex.exe")
-#!^+m::ActivateOrRun("ahk_exe WindowsTerminal.exe", "wt.exe")
+; Meh app launchers from the App layer.
+!^+g::ActivateOrRun("ahk_exe zen.exe", "zen.exe")
+!^+h::ActivateOrRun("ahk_exe Code.exe", "Code.exe")
+!^+i::ActivateOrRun("ahk_exe Discord.exe", LocalAppData "\Discord\Update.exe --processStart Discord.exe")
+!^+j::ActivateOrRun("ahk_exe Notion.exe", LocalAppData "\Programs\Notion\Notion.exe")
+!^+c::ActivateOrRun("ahk_exe Codex.exe", "Codex.exe")
+!^+m::ActivateOrRun("ahk_exe WindowsTerminal.exe", "wt.exe")
 
 TiledWindowBounds := Map()
 
@@ -90,7 +90,7 @@ GetWindowMonitorWorkArea(hwnd) {
 }
 
 ; Absolute Windows tiling from the App layer.
-#!^+Left::TileActiveWindow("left")
-#!^+Right::TileActiveWindow("right")
-#!^+Space::TileActiveWindow("fill")
-#!^+Enter::TileActiveWindow("restore")
+!^+Left::TileActiveWindow("left")
+!^+Right::TileActiveWindow("right")
+!^+Space::TileActiveWindow("fill")
+!^+Enter::TileActiveWindow("restore")
