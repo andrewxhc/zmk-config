@@ -50,7 +50,7 @@
     ok_app_mod: os_key_app_modifier {
       compatible = "zmk,behavior-os-key";
       #binding-cells = <0>;
-      bindings = <&kt LALT>, <&kt LGUI>, <&kt LALT>;
+      bindings = <&kt LALT>, <&kt LALT>, <&kt LALT>;
     };
 
     ok_launcher: os_key_launcher {

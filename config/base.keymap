@@ -146,6 +146,10 @@ ZMK_TRI_STATE(
 ZMK_TRI_STATE(swapper, bindings = <&ok_app_mod>, <&kp TAB>, <&ok_app_mod>;
               ignored-key-positions = <LT4 RM1 RM2 RM3 RM4>;)
 
+// Mac (AltTab app) swapper for active application's windows
+ZMK_TRI_STATE(swapper_app, bindings = <&ok_app_mod>, <&kp GRAVE>, <&ok_app_mod>;
+              ignored-key-positions = <LM4 RM1 RM2 RM3 RM4>;)
+
 ZMK_MOD_MORPH(bspc_morph, bindings = <&kp BSPC>, <&ok_word_bspc>;
               mods = <(MOD_LCTL | MOD_RCTL)>;)
 
@@ -333,9 +337,9 @@ ZMK_BASE_LAYER(Btn,
 
 ZMK_BASE_LAYER(App,
     //╭─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────╮
-        &swapper      &kp LS(TAB)     OS_DSK_PREV   OS_DSK_MGR    OS_DSK_NEXT   ___         ,   MEH_A         MEH_B         MEH_C         MEH_D         MEH_E           ___         ,
+        &swapper        &kp LS(TAB)   OS_DSK_PREV   OS_DSK_MGR    OS_DSK_NEXT   ___         ,   MEH_A         MEH_B         MEH_C         MEH_D         MEH_E           ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        ___             ___           OS_TILE_LEFT  OS_TILE_FILL  OS_TILE_RIGHT ___         ,   MEH_F         MEH_G         MEH_H         MEH_I         MEH_J           ___         ,
+        &swapper_app    &kp LSHFT     OS_TILE_LEFT  OS_TILE_FILL  OS_TILE_RIGHT ___         ,   MEH_F         MEH_G         MEH_H         MEH_I         MEH_J           ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
         ___             ___           OS_MON_NEXT   OS_WIN_MIN    OS_TILE_RST   ___         ,   MEH_K         MEH_L         MEH_M         MEH_N         MEH_O           ___         ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
