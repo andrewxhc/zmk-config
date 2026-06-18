@@ -194,11 +194,30 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 
 // Misc aliases. [TODO: clean up]
 #define CANCEL    &kp K_CANCEL            // Cancel caps-word & auto-layers.
-#define DSK_PREV  &ok_dsk_prev            // Previous desktop.
-#define DSK_NEXT  &ok_dsk_next            // Next desktop.
-#define DSK_MGR   &ok_dsk_mgr             // Desktop manager.
+#define OS_DSK_PREV &ok_dsk_prev          // Previous desktop.
+#define OS_DSK_NEXT &ok_dsk_next          // Next desktop.
+#define OS_DSK_MGR  &ok_dsk_mgr           // Desktop manager.
 // #define PIN_WIN &kp LG(LC(LS(Q)))         // Pin window across desktops.
 // #define PIN_APP &kp LG(LC(LS(A)))         // Pin application across desktops.
+
+// Hyper key shortcuts
+#define HYPER(k)     &kp LG(LC(LS(LA(k))))
+#define HY_A         HYPER(A)
+#define HY_B         HYPER(B)
+#define HY_C         HYPER(C)
+#define HY_D         HYPER(D)
+#define HY_E         HYPER(E)
+#define HY_F         HYPER(F)
+#define HY_G         HYPER(G)
+#define HY_H         HYPER(H)
+#define HY_I         HYPER(I)
+#define HY_J         HYPER(J)
+#define HY_K         HYPER(K)
+#define HY_L         HYPER(L)
+#define HY_M         HYPER(M)
+#define HY_N         HYPER(N)
+#define HY_O         HYPER(O)
+
 
 /* Keymap */
 
@@ -309,11 +328,11 @@ ZMK_BASE_LAYER(Btn,
 
 ZMK_BASE_LAYER(App,
     //╭─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────╮
-        &swapper      &kp LS(TAB)     ___           ___           ___           ___         ,   ___           ___           ___           ___           ___             ___         ,
+        &swapper      &kp LS(TAB)     ___           ___           ___           ___         ,   HY_A          HY_B          HY_C          HY_D          HY_E            ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        ___             ___           ___           ___           ___           ___         ,   DSK_PREV      DSK_MGR       DSK_NEXT      ___           ___             ___         ,
+        ___             ___           ___           ___           ___           ___         ,   HY_F          HY_G          HY_H          HY_I          HY_J            ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        ___             ___           ___           ___           ___           ___         ,   ___           ___           ___           ___           ___             ___         ,
+        ___             ___           OS_DSK_PREV   OS_DSK_MGR    OS_DSK_NEXT   ___         ,   HY_K          HY_L          HY_M          HY_N          HY_O            ___         ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
                                                     ___           ___           ___         ,   ___           ___           ___
     //                                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
