@@ -77,6 +77,30 @@
       bindings = <&kp LG(LC(RIGHT))>, <&kp LC(RIGHT)>, <&kp LG(LC(RIGHT))>;
     };
 
+    ok_tile_left: os_key_tile_left {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LG(LEFT)>, <&kp LC(LA(LEFT))>, <&kp LG(LEFT)>;
+    };
+
+    ok_tile_right: os_key_tile_right {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LG(RIGHT)>, <&kp LC(LA(RIGHT))>, <&kp LG(RIGHT)>;
+    };
+
+    ok_tile_fill: os_key_tile_fill {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LG(UP)>, <&kp LC(LA(RET))>, <&kp LG(UP)>;
+    };
+
+    ok_tile_restore: os_key_tile_restore {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LG(DOWN)>, <&kp LC(LA(BSPC))>, <&kp LG(DOWN)>;
+    };
+
     ok_line_start: os_key_line_start {
       compatible = "zmk,behavior-os-key";
       #binding-cells = <0>;
