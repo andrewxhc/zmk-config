@@ -200,6 +200,8 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 #define OS_TILE_RIGHT &ok_tile_right   // Tile window right.
 #define OS_TILE_FILL  &ok_tile_fill    // Fill/maximize window.
 #define OS_TILE_RST   &ok_tile_restore // Restore previous window size.
+#define OS_MON_NEXT   &ok_monitor_next // Move window to next monitor.
+#define OS_WIN_MIN    &ok_window_minimize // Minimize window.
 // #define PIN_WIN &kp LG(LC(LS(Q)))         // Pin window across desktops.
 // #define PIN_APP &kp LG(LC(LS(A)))         // Pin application across desktops.
 
@@ -331,13 +333,13 @@ ZMK_BASE_LAYER(Btn,
 
 ZMK_BASE_LAYER(App,
     //╭─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────╮
-        &swapper      &kp LS(TAB)     ___           ___           ___           ___         ,   MEH_A         MEH_B         MEH_C         MEH_D         MEH_E           ___         ,
+        &swapper      &kp LS(TAB)     OS_DSK_PREV   OS_DSK_MGR    OS_DSK_NEXT   ___         ,   MEH_A         MEH_B         MEH_C         MEH_D         MEH_E           ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        OS_TILE_LEFT    ___           ___           ___           ___           ___         ,   MEH_F         MEH_G         MEH_H         MEH_I         MEH_J           OS_TILE_RIGHT,
+        ___             ___           OS_TILE_LEFT  OS_TILE_FILL  OS_TILE_RIGHT ___         ,   MEH_F         MEH_G         MEH_H         MEH_I         MEH_J           ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        ___             ___           OS_DSK_PREV   OS_DSK_MGR    OS_DSK_NEXT   ___         ,   MEH_K         MEH_L         MEH_M         MEH_N         MEH_O           ___         ,
+        ___             ___           OS_MON_NEXT   OS_WIN_MIN    OS_TILE_RST   ___         ,   MEH_K         MEH_L         MEH_M         MEH_N         MEH_O           ___         ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
-                                                    ___           ___           ___         ,   OS_TILE_RST   OS_TILE_FILL  ___
+                                                    ___           ___           ___         ,   ___           ___           ___
     //                                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
 

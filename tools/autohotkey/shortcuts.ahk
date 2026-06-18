@@ -73,6 +73,11 @@ TileActiveWindow(position) {
 }
 
 GetWindowMonitorWorkArea(hwnd) {
+    monitorIndex := GetWindowMonitorIndex(hwnd)
+    return GetMonitorWorkArea(monitorIndex)
+}
+
+GetWindowMonitorIndex(hwnd) {
     WinGetPos &wx, &wy, &ww, &wh, "ahk_id " hwnd
     cx := wx + (ww // 2)
     cy := wy + (wh // 2)
@@ -81,16 +86,68 @@ GetWindowMonitorWorkArea(hwnd) {
     Loop monitorCount {
         MonitorGetWorkArea A_Index, &left, &top, &right, &bottom
         if cx >= left && cx < right && cy >= top && cy < bottom {
-            return {Left: left, Top: top, Right: right, Bottom: bottom}
+            return A_Index
         }
     }
 
-    MonitorGetWorkArea 1, &left, &top, &right, &bottom
+    return 1
+}
+
+GetMonitorWorkArea(monitorIndex) {
+    MonitorGetWorkArea monitorIndex, &left, &top, &right, &bottom
     return {Left: left, Top: top, Right: right, Bottom: bottom}
+}
+
+MoveActiveWindowToNextMonitor() {
+    hwnd := WinGetID("A")
+    if !hwnd
+        return
+
+    monitorCount := MonitorGetCount()
+    if monitorCount < 2
+        return
+
+    currentIndex := GetWindowMonitorIndex(hwnd)
+    targetIndex := currentIndex = monitorCount ? 1 : currentIndex + 1
+    current := GetMonitorWorkArea(currentIndex)
+    target := GetMonitorWorkArea(targetIndex)
+
+    wasMaximized := WinGetMinMax("ahk_id " hwnd) = 1
+    if wasMaximized
+        WinRestore "ahk_id " hwnd
+
+    WinGetPos &wx, &wy, &ww, &wh, "ahk_id " hwnd
+
+    currentW := current.Right - current.Left
+    currentH := current.Bottom - current.Top
+    targetW := target.Right - target.Left
+    targetH := target.Bottom - target.Top
+
+    relX := currentW > 0 ? (wx - current.Left) / currentW : 0
+    relY := currentH > 0 ? (wy - current.Top) / currentH : 0
+    newW := Min(ww, targetW)
+    newH := Min(wh, targetH)
+    newX := target.Left + Round(relX * targetW)
+    newY := target.Top + Round(relY * targetH)
+    newX := Max(target.Left, Min(newX, target.Right - newW))
+    newY := Max(target.Top, Min(newY, target.Bottom - newH))
+
+    WinMove newX, newY, newW, newH, "ahk_id " hwnd
+
+    if wasMaximized
+        WinMaximize "ahk_id " hwnd
+}
+
+MinimizeActiveWindow() {
+    hwnd := WinGetID("A")
+    if hwnd
+        WinMinimize "ahk_id " hwnd
 }
 
 ; Absolute Windows tiling from the App layer.
 !^+Left::TileActiveWindow("left")
 !^+Right::TileActiveWindow("right")
-!^+Space::TileActiveWindow("fill")
-!^+Enter::TileActiveWindow("restore")
+!^+Enter::TileActiveWindow("fill")
+!^+Backspace::TileActiveWindow("restore")
+!^+PgDn::MoveActiveWindowToNextMonitor()
+!^+-::MinimizeActiveWindow()
