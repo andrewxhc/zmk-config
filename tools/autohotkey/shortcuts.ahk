@@ -1,5 +1,5 @@
-﻿#Requires AutoHotkey v2.0
+#Requires AutoHotkey v2.0
+#SingleInstance Force
 
-MsgBox "AutoHotkey is running."
-
-^!n::Run "notepad.exe"
+; Type ;email and it expands
+::;email::xuhanchengandrew@gmail.com

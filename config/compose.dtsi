@@ -1,0 +1,7 @@
+ZMK_MACRO(compose_lenny_face,
+    wait-ms = <20>;
+    tap-ms = <20>;
+    bindings = <&macro_tap &kp RALT>,
+               <&macro_tap &kp L>,
+               <&macro_tap &kp F>;
+)

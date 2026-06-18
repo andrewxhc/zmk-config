@@ -16,7 +16,8 @@
 // keymap drawing script (dsend name change)
 // drawing not fixed
 // Urob's combos look good for now, potentially make my own later
-// Meh + super with autohotkey/keyboard maestro for super fast window switching (https://www.youtube.com/watch?v=Px0_8J0Wb-s)
+// Meh + hyper with autohotkey/keyboard maestro for super fast window switching (https://www.youtube.com/watch?v=Px0_8J0Wb-s)
+// Leader sequences os aware?
 
 #define DSEND 0
 #define QWERTY 1
@@ -72,6 +73,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 /* Combos, leader key sequences, mouse emulation */
 
 #include "combos.dtsi" // Must be sourced after HRM-combo hack.
+#include "compose.dtsi"
 #include "leader.dtsi"
 #include "mouse.dtsi"
 #include "oskeys.dtsi"
