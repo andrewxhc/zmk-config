@@ -75,10 +75,10 @@ draw: _check_yq_version
             (.[3] | if is_transparent then null else extract_label end) as $num |
             (.[4] | if is_transparent then null else extract_label end) as $sym |
             $base
-            + (if $nav == null then {} else {tr: $nav} end)
+            + (if $nav == null then {} else {br: $nav} end)
             + (if $app == null then {} else {tl: $app} end)
             + (if $num == null then {} else {bl: $num} end)
-            + (if $sym == null then {} else {br: $sym} end)
+            + (if $sym == null then {} else {tr: $sym} end)
         ],
         Combos: .layers.Combos
         } |

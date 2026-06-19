@@ -30,21 +30,21 @@ parse_config:
     "&ok_launcher": Launcher
     "&smart_button": Smart Button
 
-    "&ok_line_start": Line Start
-    "&ok_line_end": Line End
-    "&ok_doc_start": Doc Start
-    "&ok_doc_end": Doc End
+    "&ok_line_start": <-Line
+    "&ok_line_end": Line->
+    "&ok_doc_start": <-Doc
+    "&ok_doc_end": Doc->
     "&ok_prev_word": Prev Word
     "&ok_next_word": Next Word
     "&ok_up": OS Up
     "&ok_down": OS Down
     "&ok_word_bspc": Word Bspc
 
-    "&ok_ss_full": Screenshot
-    "&ok_ss_win": Win Shot
-    "&ok_ss_region": Region Shot
+    "&ok_ss_full": SS
+    "&ok_ss_win": Win SS
+    "&ok_ss_region": Snip SS
     "&ok_addr_bar": Address
-    "&ok_sel_all": Select All
+    "&ok_sel_all": All
     "&ok_find": Find
     "&ok_undo": Undo
     "&ok_redo": Redo
@@ -53,17 +53,17 @@ parse_config:
     "&ok_paste": Paste
     "&ok_new_tab": New Tab
     "&ok_new_win": New Win
-    "&ok_priv_win": Private
+    "&ok_priv_win": Private Win
 
     "&ok_dsk_prev": Prev Desk
     "&ok_dsk_mgr": Desk View
     "&ok_dsk_next": Next Desk
-    "&swapper_app": App Win
+    "&swapper_app": AppWin
     "&ok_tile_left": Tile Left
     "&ok_tile_fill": Fill
     "&ok_tile_right": Tile Right
     "&ok_monitor_next": Next Mon
-    "&ok_window_minimize": Minimize
+    "&ok_window_minimize": Min
     "&ok_tile_restore": Restore
 
     "&kp LG(LC(LEFT))": PDesk
@@ -73,12 +73,18 @@ parse_config:
 
     "&swapper": NWin
     "&kp LS(TAB)": PWin
+    "&dot_morph": "."
+    "&comma_morph": ","
     "&dot_spc": Sentence
     "&num_dance": { "t": "Smart"}
     "&magic_shift": { "t": Magic, "h": "Shift" }
     "&smart_mouse": Smart Mouse
 
     "&hml LS(LALT)TAB": Tab
+    "&hml LSHFT N": { "t": "N", "h": "shft" }
+    "&hmr RSHFT E": { "t": "E", "h": "shft" }
+    "&hml LSHFT D": { "t": "D", "h": "shft" }
+    "&hmr RSHFT K": { "t": "K", "h": "shft" }
     "&hm_combo_ldr": Leader
     "&hm_combo_ldrsh": Shift+Leader
     "&hm_combo_lpar": { "t": "< (" }
@@ -263,6 +269,42 @@ draw_config:
     text.hold    { font-weight: 400; font-size: 13px; }
     text.shifted { font-weight: 400; font-size: 11px; }
     text.combo, text.left, text.right, text.tl, text.tr, text.bl, text.br { font-size: 10px; }
+    .layer-Dsend .keypos-12 text.tap,
+    .layer-Dsend .keypos-12 text.hold,
+    .layer-Dsend .keypos-23 text.tap,
+    .layer-Dsend .keypos-23 text.hold,
+    .layer-Qwerty .keypos-12 text.tap,
+    .layer-Qwerty .keypos-12 text.hold,
+    .layer-Qwerty .keypos-23 text.tap,
+    .layer-Qwerty .keypos-23 text.hold { font-size: 13px; }
+
+    .layer-Dsend .keypos-13 text.hold,
+    .layer-Dsend .keypos-14 text.hold,
+    .layer-Dsend .keypos-15 text.hold,
+    .layer-Dsend .keypos-16 text.hold,
+    .layer-Qwerty .keypos-13 text.hold,
+    .layer-Qwerty .keypos-14 text.hold,
+    .layer-Qwerty .keypos-15 text.hold,
+    .layer-Qwerty .keypos-16 text.hold {
+        font-size: 10px;
+        text-anchor: start;
+        dominant-baseline: middle;
+        transform: translate(-24px, -21px);
+    }
+
+    .layer-Dsend .keypos-19 text.hold,
+    .layer-Dsend .keypos-20 text.hold,
+    .layer-Dsend .keypos-21 text.hold,
+    .layer-Dsend .keypos-22 text.hold,
+    .layer-Qwerty .keypos-19 text.hold,
+    .layer-Qwerty .keypos-20 text.hold,
+    .layer-Qwerty .keypos-21 text.hold,
+    .layer-Qwerty .keypos-22 text.hold {
+        font-size: 10px;
+        text-anchor: end;
+        dominant-baseline: middle;
+        transform: translate(24px, -21px);
+    }
 
     text.hold, text.bl, text.br    { text-anchor: middle; dominant-baseline: auto; }
     text.shifted, text.tl, text.tr { text-anchor: middle; dominant-baseline: hanging; }
@@ -288,9 +330,9 @@ draw_config:
     path.combo { stroke: var(--color-dendron); stroke-width: 2; stroke-dasharray: 2, 3; opacity: 0.45; fill: none; }
 
     text.tl, use.tl { fill: var(--color-app); }
-    text.tr, use.tr { fill: var(--color-nav); }
+    text.tr, use.tr { fill: var(--color-sym); }
     text.bl, use.bl { fill: var(--color-num); }
-    text.br, use.br { fill: var(--color-sym); }
+    text.br, use.br { fill: var(--color-nav); }
 
     .keypos-36 text.hold { fill: var(--color-app); }
     .keypos-38 text.hold,
@@ -312,7 +354,7 @@ draw_config:
             --color-held:    #665c54;
 
             --color-app:     #458588;
-            --color-nav:     #fabd2f;
+            --color-nav:     #d79921;
             --color-num:     #d65d0e;
             --color-sym:     #689d6a;
         }

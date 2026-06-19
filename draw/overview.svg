@@ -32,6 +32,42 @@ text.tap     { font-weight: 500; }
 text.hold    { font-weight: 400; font-size: 13px; }
 text.shifted { font-weight: 400; font-size: 11px; }
 text.combo, text.left, text.right, text.tl, text.tr, text.bl, text.br { font-size: 10px; }
+.layer-Dsend .keypos-12 text.tap,
+.layer-Dsend .keypos-12 text.hold,
+.layer-Dsend .keypos-23 text.tap,
+.layer-Dsend .keypos-23 text.hold,
+.layer-Qwerty .keypos-12 text.tap,
+.layer-Qwerty .keypos-12 text.hold,
+.layer-Qwerty .keypos-23 text.tap,
+.layer-Qwerty .keypos-23 text.hold { font-size: 13px; }
+
+.layer-Dsend .keypos-13 text.hold,
+.layer-Dsend .keypos-14 text.hold,
+.layer-Dsend .keypos-15 text.hold,
+.layer-Dsend .keypos-16 text.hold,
+.layer-Qwerty .keypos-13 text.hold,
+.layer-Qwerty .keypos-14 text.hold,
+.layer-Qwerty .keypos-15 text.hold,
+.layer-Qwerty .keypos-16 text.hold {
+    font-size: 10px;
+    text-anchor: start;
+    dominant-baseline: middle;
+    transform: translate(-24px, -21px);
+}
+
+.layer-Dsend .keypos-19 text.hold,
+.layer-Dsend .keypos-20 text.hold,
+.layer-Dsend .keypos-21 text.hold,
+.layer-Dsend .keypos-22 text.hold,
+.layer-Qwerty .keypos-19 text.hold,
+.layer-Qwerty .keypos-20 text.hold,
+.layer-Qwerty .keypos-21 text.hold,
+.layer-Qwerty .keypos-22 text.hold {
+    font-size: 10px;
+    text-anchor: end;
+    dominant-baseline: middle;
+    transform: translate(24px, -21px);
+}
 
 text.hold, text.bl, text.br    { text-anchor: middle; dominant-baseline: auto; }
 text.shifted, text.tl, text.tr { text-anchor: middle; dominant-baseline: hanging; }
@@ -57,9 +93,9 @@ rect.held, rect.combo.held                { fill: var(--color-held); }
 path.combo { stroke: var(--color-dendron); stroke-width: 2; stroke-dasharray: 2, 3; opacity: 0.45; fill: none; }
 
 text.tl, use.tl { fill: var(--color-app); }
-text.tr, use.tr { fill: var(--color-nav); }
+text.tr, use.tr { fill: var(--color-sym); }
 text.bl, use.bl { fill: var(--color-num); }
-text.br, use.br { fill: var(--color-sym); }
+text.br, use.br { fill: var(--color-nav); }
 
 .keypos-36 text.hold { fill: var(--color-app); }
 .keypos-38 text.hold,
@@ -81,7 +117,7 @@ text.br, use.br { fill: var(--color-sym); }
         --color-held:    #665c54;
 
         --color-app:     #458588;
-        --color-nav:     #fabd2f;
+        --color-nav:     #d79921;
         --color-num:     #d65d0e;
         --color-sym:     #689d6a;
     }
@@ -99,71 +135,71 @@ text.br, use.br { fill: var(--color-sym); }
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">X</text>
 <text x="-22" y="-22" class="key tl">PWin</text>
-<text x="22" y="-22" class="key tr"><tspan style="font-size: 70%">Screenshot</tspan></text>
-<text x="22" y="22" class="key br">&amp;</text>
+<text x="22" y="-22" class="key tr">&amp;</text>
+<text x="22" y="22" class="key br">SS</text>
 </g>
 <g transform="translate(140, 35)" class="key keypos-2">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">C</text>
 <text x="-22" y="-22" class="key tl"><tspan style="font-size: 78%">Prev Desk</tspan></text>
-<text x="22" y="-22" class="key tr"><tspan style="font-size: 88%">Win Shot</tspan></text>
+<text x="22" y="-22" class="key tr">@</text>
 <text x="-22" y="22" class="key bl">7</text>
-<text x="22" y="22" class="key br">@</text>
+<text x="22" y="22" class="key br">Win SS</text>
 </g>
 <g transform="translate(196, 28)" class="key keypos-3">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">L</text>
 <text x="-22" y="-22" class="key tl"><tspan style="font-size: 78%">Desk View</tspan></text>
-<text x="22" y="-22" class="key tr"><tspan style="font-size: 64%">Region Shot</tspan></text>
+<text x="22" y="-22" class="key tr">#</text>
 <text x="-22" y="22" class="key bl">8</text>
-<text x="22" y="22" class="key br">#</text>
+<text x="22" y="22" class="key br">Snip SS</text>
 </g>
 <g transform="translate(252, 35)" class="key keypos-4">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">F</text>
 <text x="-22" y="-22" class="key tl"><tspan style="font-size: 78%">Next Desk</tspan></text>
+<text x="22" y="-22" class="key tr">$</text>
 <text x="-22" y="22" class="key bl">9</text>
-<text x="22" y="22" class="key br">$</text>
 </g>
 <g transform="translate(308, 42)" class="key keypos-5">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">V</text>
+<text x="22" y="-22" class="key tr">^</text>
 <text x="-22" y="22" class="key bl">*</text>
-<text x="22" y="22" class="key br">^</text>
 </g>
 <g transform="translate(532, 42)" class="key keypos-6">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">&#x27;</text>
 <text x="-22" y="-22" class="key tl">Meh+A</text>
-<text x="22" y="22" class="key br">&quot;</text>
+<text x="22" y="-22" class="key tr">&quot;</text>
 </g>
 <g transform="translate(588, 35)" class="key keypos-7">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">;</text>
 <text x="-22" y="-22" class="key tl">Meh+B</text>
-<text x="22" y="-22" class="key tr">Address</text>
-<text x="22" y="22" class="key br">(</text>
+<text x="22" y="-22" class="key tr">(</text>
+<text x="22" y="22" class="key br">Address</text>
 </g>
 <g transform="translate(644, 28)" class="key keypos-8">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">U</text>
 <text x="-22" y="-22" class="key tl">Meh+C</text>
-<text x="22" y="-22" class="key tr">PgUp</text>
-<text x="22" y="22" class="key br">)</text>
+<text x="22" y="-22" class="key tr">)</text>
+<text x="22" y="22" class="key br">PgUp</text>
 </g>
 <g transform="translate(700, 35)" class="key keypos-9">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">P</text>
 <text x="-22" y="-22" class="key tl">Meh+D</text>
-<text x="22" y="-22" class="key tr">PgDn</text>
-<text x="22" y="22" class="key br">{ [</text>
+<text x="22" y="-22" class="key tr">{ [</text>
+<text x="22" y="22" class="key br">PgDn</text>
 </g>
 <g transform="translate(756, 49)" class="key keypos-10">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">Q</text>
 <text x="-22" y="-22" class="key tl">Meh+E</text>
-<text x="22" y="-22" class="key tr">Ins</text>
-<text x="22" y="22" class="key br">} ]</text>
+<text x="22" y="-22" class="key tr">} ]</text>
+<text x="22" y="22" class="key br">Ins</text>
 </g>
 <g transform="translate(812, 49)" class="key keypos-11">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -171,95 +207,90 @@ text.br, use.br { fill: var(--color-sym); }
 </g>
 <g transform="translate(28, 105)" class="key keypos-12">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="1" class="key tap">
-<tspan x="0" dy="-0.9em">Line</tspan><tspan x="0" dy="1.2em">Start</tspan>
-</text>
-<text x="0" y="22" class="key hold"><tspan style="font-size: 78%">Doc Start</tspan></text>
-<text x="-22" y="-22" class="key tl">App Win</text>
-<text x="22" y="22" class="key br">%</text>
+<text x="0" y="1" class="key tap">&lt;-Line</text>
+<text x="0" y="22" class="key hold">&lt;-Doc</text>
+<text x="-22" y="-22" class="key tl">AppWin</text>
+<text x="22" y="-22" class="key tr">%</text>
 </g>
 <g transform="translate(84, 105)" class="key keypos-13">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">R</text>
 <text x="0" y="22" class="key hold">Gui</text>
 <text x="-22" y="-22" class="key tl">Shift</text>
-<text x="22" y="-22" class="key tr">Redo</text>
+<text x="22" y="-22" class="key tr">+</text>
 <text x="-22" y="22" class="key bl">+</text>
-<text x="22" y="22" class="key br">+</text>
+<text x="22" y="22" class="key br">Redo</text>
 </g>
 <g transform="translate(140, 91)" class="key keypos-14">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">S</text>
 <text x="0" y="22" class="key hold">Alt</text>
 <text x="-22" y="-22" class="key tl"><tspan style="font-size: 78%">Tile Left</tspan></text>
+<text x="22" y="-22" class="key tr">-</text>
 <text x="-22" y="22" class="key bl">4</text>
-<text x="22" y="22" class="key br">-</text>
 </g>
 <g transform="translate(196, 84)" class="key keypos-15">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">N</text>
-<text x="0" y="22" class="key hold">Shift</text>
+<text x="0" y="22" class="key hold">shft</text>
 <text x="-22" y="-22" class="key tl">Fill</text>
-<text x="22" y="-22" class="key tr"><tspan style="font-size: 70%">Select All</tspan></text>
+<text x="22" y="-22" class="key tr">*</text>
 <text x="-22" y="22" class="key bl">5</text>
-<text x="22" y="22" class="key br">*</text>
+<text x="22" y="22" class="key br">All</text>
 </g>
 <g transform="translate(252, 91)" class="key keypos-16">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">T</text>
 <text x="0" y="22" class="key hold">Ctrl</text>
 <text x="-22" y="-22" class="key tl"><tspan style="font-size: 70%">Tile Right</tspan></text>
-<text x="22" y="-22" class="key tr">Find</text>
+<text x="22" y="-22" class="key tr">/</text>
 <text x="-22" y="22" class="key bl">6</text>
-<text x="22" y="22" class="key br">/</text>
+<text x="22" y="22" class="key br">Find</text>
 </g>
 <g transform="translate(308, 98)" class="key keypos-17">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">G</text>
+<text x="22" y="-22" class="key tr">=</text>
 <text x="-22" y="22" class="key bl">=</text>
-<text x="22" y="22" class="key br">=</text>
 </g>
 <g transform="translate(532, 98)" class="key keypos-18">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">.</text>
-<text x="0" y="-22" class="key shifted">!</text>
 <text x="-22" y="-22" class="key tl">Meh+F</text>
-<text x="22" y="22" class="key br">!</text>
+<text x="22" y="-22" class="key tr">!</text>
 </g>
 <g transform="translate(588, 91)" class="key keypos-19">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">A</text>
 <text x="0" y="22" class="key hold">Ctrl</text>
 <text x="-22" y="-22" class="key tl">Meh+G</text>
-<text x="22" y="-22" class="key tr">←</text>
+<text x="22" y="22" class="key br">←</text>
 </g>
 <g transform="translate(644, 84)" class="key keypos-20">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">E</text>
-<text x="0" y="22" class="key hold">Shift</text>
+<text x="0" y="22" class="key hold">shft</text>
 <text x="-22" y="-22" class="key tl">Meh+H</text>
-<text x="22" y="-22" class="key tr">↑</text>
+<text x="22" y="22" class="key br">↑</text>
 </g>
 <g transform="translate(700, 91)" class="key keypos-21">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">H</text>
 <text x="0" y="22" class="key hold">Alt</text>
 <text x="-22" y="-22" class="key tl">Meh+I</text>
-<text x="22" y="-22" class="key tr">↓</text>
+<text x="22" y="22" class="key br">↓</text>
 </g>
 <g transform="translate(756, 105)" class="key keypos-22">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">I</text>
 <text x="0" y="22" class="key hold">Gui</text>
 <text x="-22" y="-22" class="key tl">Meh+J</text>
-<text x="22" y="-22" class="key tr">→</text>
+<text x="22" y="22" class="key br">→</text>
 </g>
 <g transform="translate(812, 105)" class="key keypos-23">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="1" class="key tap">
-<tspan x="0" dy="-0.9em">Line</tspan><tspan x="0" dy="1.2em">End</tspan>
-</text>
-<text x="0" y="22" class="key hold">Doc End</text>
+<text x="0" y="1" class="key tap">Line-&gt;</text>
+<text x="0" y="22" class="key hold">Doc-&gt;</text>
 </g>
 <g transform="translate(28, 161)" class="key keypos-24">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -268,73 +299,72 @@ text.br, use.br { fill: var(--color-sym); }
 <g transform="translate(84, 161)" class="key keypos-25">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">Z</text>
-<text x="22" y="-22" class="key tr">Undo</text>
+<text x="22" y="-22" class="key tr">~</text>
 <text x="-22" y="22" class="key bl">-</text>
-<text x="22" y="22" class="key br">~</text>
+<text x="22" y="22" class="key br">Undo</text>
 </g>
 <g transform="translate(140, 147)" class="key keypos-26">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">W</text>
 <text x="-22" y="-22" class="key tl"><tspan style="font-size: 88%">Next Mon</tspan></text>
-<text x="22" y="-22" class="key tr">Cut</text>
+<text x="22" y="-22" class="key tr">|</text>
 <text x="-22" y="22" class="key bl">1</text>
-<text x="22" y="22" class="key br">|</text>
+<text x="22" y="22" class="key br">Cut</text>
 </g>
 <g transform="translate(196, 140)" class="key keypos-27">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">M</text>
-<text x="-22" y="-22" class="key tl"><tspan style="font-size: 88%">Minimize</tspan></text>
-<text x="22" y="-22" class="key tr">Copy</text>
+<text x="-22" y="-22" class="key tl">Min</text>
+<text x="22" y="-22" class="key tr">_</text>
 <text x="-22" y="22" class="key bl">2</text>
-<text x="22" y="22" class="key br">_</text>
+<text x="22" y="22" class="key br">Copy</text>
 </g>
 <g transform="translate(252, 147)" class="key keypos-28">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">D</text>
 <text x="-22" y="-22" class="key tl">Restore</text>
-<text x="22" y="-22" class="key tr">Paste</text>
+<text x="22" y="-22" class="key tr">:</text>
 <text x="-22" y="22" class="key bl">3</text>
-<text x="22" y="22" class="key br">:</text>
+<text x="22" y="22" class="key br">Paste</text>
 </g>
 <g transform="translate(308, 154)" class="key keypos-29">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">B</text>
+<text x="22" y="-22" class="key tr">\</text>
 <text x="-22" y="22" class="key bl">/</text>
-<text x="22" y="22" class="key br">\</text>
 </g>
 <g transform="translate(532, 154)" class="key keypos-30">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">,</text>
-<text x="0" y="-22" class="key shifted">?</text>
 <text x="-22" y="-22" class="key tl">Meh+K</text>
-<text x="22" y="22" class="key br">?</text>
+<text x="22" y="-22" class="key tr">?</text>
 </g>
 <g transform="translate(588, 147)" class="key keypos-31">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">O</text>
 <text x="-22" y="-22" class="key tl">Meh+L</text>
-<text x="22" y="-22" class="key tr">New Tab</text>
-<text x="22" y="22" class="key br">{</text>
+<text x="22" y="-22" class="key tr">{</text>
+<text x="22" y="22" class="key br">New Tab</text>
 </g>
 <g transform="translate(644, 140)" class="key keypos-32">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">Y</text>
 <text x="-22" y="-22" class="key tl">Meh+M</text>
-<text x="22" y="-22" class="key tr">New Win</text>
-<text x="22" y="22" class="key br">}</text>
+<text x="22" y="-22" class="key tr">}</text>
+<text x="22" y="22" class="key br">New Win</text>
 </g>
 <g transform="translate(700, 147)" class="key keypos-33">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">K</text>
 <text x="-22" y="-22" class="key tl">Meh+N</text>
-<text x="22" y="-22" class="key tr">Private</text>
-<text x="22" y="22" class="key br">&lt;</text>
+<text x="22" y="-22" class="key tr">&lt;</text>
+<text x="22" y="22" class="key br"><tspan style="font-size: 64%">Private Win</tspan></text>
 </g>
 <g transform="translate(756, 161)" class="key keypos-34">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">J</text>
 <text x="-22" y="-22" class="key tl">Meh+O</text>
-<text x="22" y="22" class="key br">&gt;</text>
+<text x="22" y="-22" class="key tr">&gt;</text>
 </g>
 <g transform="translate(812, 161)" class="key keypos-35">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
