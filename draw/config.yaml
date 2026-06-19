@@ -3,7 +3,7 @@ parse_config:
     - "modules/zmk/helpers/include"
 
   zmk_preamble: |
-    #include <zmk-helpers/key-labels/34.h>
+    #include <zmk-helpers/key-labels/42.h>
     #define CONFIG_WIRELESS
 
   raw_binding_map:
@@ -12,14 +12,59 @@ parse_config:
     "&caps_word": Caps Word
     "&kp LA(F4)": Close
 
-    "&bt BT_SEL 0": BT 1
-    "&bt BT_SEL 1": BT 2
-    "&bt BT_SEL 2": BT 3
-    "&bt BT_SEL 3": BT 4
+    "&bt BT_SEL 0": BT 0
+    "&bt BT_SEL 1": BT 1
+    "&bt BT_SEL 2": BT 2
+    "&bt BT_SEL 3": BT 3
+    "&bt0_win": BT 0 Win
+    "&bt1_mac": BT 1 Mac
+
+    "&select_win": Win
+    "&select_mac": Mac
+    "&select_lin": Linux
 
     "&kp LC(INS)": Copy
     "&kp LC(X)": Cut
     "&kp LS(INS)": Paste
+
+    "&ok_launcher": Launcher
+    "&smart_button": Smart Button
+
+    "&ok_line_start": Line Start
+    "&ok_line_end": Line End
+    "&ok_doc_start": Doc Start
+    "&ok_doc_end": Doc End
+    "&ok_prev_word": Prev Word
+    "&ok_next_word": Next Word
+    "&ok_up": OS Up
+    "&ok_down": OS Down
+    "&ok_word_bspc": Word Bspc
+
+    "&ok_ss_full": Screenshot
+    "&ok_ss_win": Win Shot
+    "&ok_ss_region": Region Shot
+    "&ok_addr_bar": Address
+    "&ok_sel_all": Select All
+    "&ok_find": Find
+    "&ok_undo": Undo
+    "&ok_redo": Redo
+    "&ok_cut": Cut
+    "&ok_copy": Copy
+    "&ok_paste": Paste
+    "&ok_new_tab": New Tab
+    "&ok_new_win": New Win
+    "&ok_priv_win": Private
+
+    "&ok_dsk_prev": Prev Desk
+    "&ok_dsk_mgr": Desk View
+    "&ok_dsk_next": Next Desk
+    "&swapper_app": App Win
+    "&ok_tile_left": Tile Left
+    "&ok_tile_fill": Fill
+    "&ok_tile_right": Tile Right
+    "&ok_monitor_next": Next Mon
+    "&ok_window_minimize": Minimize
+    "&ok_tile_restore": Restore
 
     "&kp LG(LC(LEFT))": PDesk
     "&kp LG(LC(RIGHT))": NDesk
@@ -175,7 +220,7 @@ parse_config:
 draw_config:
   append_colon_to_layer_header: false
   dark_mode: false
-  footer_text: "urob/zmk-config"
+  footer_text: "andrewxhc/zmk-config"
   glyph_tap_size: 15
   glyph_hold_size: 12
   glyph_shifted_size: 10
@@ -249,8 +294,6 @@ draw_config:
 
     .keypos-30 text.hold { fill: var(--color-nav); }
     .keypos-31 text.hold { fill: var(--color-fn); }
-    .keypos-32 text.hold { fill: var(--color-num); font-size: 15px; }
-    .keypos-32 text.tap  { fill: var(--color-num); }
     .keypos-33 text.hold { font-size: 15px; }
 
     .icon-tabler > path                             { fill: inherit; stroke: inherit; stroke-width: 2; }
