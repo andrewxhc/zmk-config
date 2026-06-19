@@ -240,10 +240,10 @@ draw_config:
         --color-dendron: #d5c4a1;
         --color-held:    #bdae93;
 
-        --color-fn:      #458588;
+        --color-app:     #458588;
         --color-nav:     #d79921;
         --color-num:     #d65d0e;
-        --color-sys:     #689d6a;
+        --color-sym:     #689d6a;
 
         fill: var(--color-text);
         background-color: var(--color-bg);
@@ -287,13 +287,16 @@ draw_config:
 
     path.combo { stroke: var(--color-dendron); stroke-width: 2; stroke-dasharray: 2, 3; opacity: 0.45; fill: none; }
 
-    text.tl, use.tl { fill: var(--color-fn); }
+    text.tl, use.tl { fill: var(--color-app); }
     text.tr, use.tr { fill: var(--color-nav); }
     text.bl, use.bl { fill: var(--color-num); }
-    text.br, use.br { fill: var(--color-sys); }
+    text.br, use.br { fill: var(--color-sym); }
 
-    .keypos-30 text.hold { fill: var(--color-nav); }
-    .keypos-31 text.hold { fill: var(--color-fn); }
+    .keypos-36 text.hold { fill: var(--color-app); }
+    .keypos-38 text.hold,
+    .keypos-39 text.hold { fill: var(--color-nav); }
+    .keypos-40 text.hold { fill: var(--color-sym); }
+    .keypos-41 text.hold { fill: var(--color-num); }
     .keypos-33 text.hold { font-size: 15px; }
 
     .icon-tabler > path                             { fill: inherit; stroke: inherit; stroke-width: 2; }
@@ -308,9 +311,9 @@ draw_config:
             --color-dendron: #504945;
             --color-held:    #665c54;
 
-            --color-fn:      #458588;
+            --color-app:     #458588;
             --color-nav:     #fabd2f;
             --color-num:     #d65d0e;
-            --color-sys:     #689d6a;
+            --color-sym:     #689d6a;
         }
     }
