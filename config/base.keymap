@@ -256,13 +256,13 @@ ZMK_BASE_LAYER(Dsend,
 
 ZMK_BASE_LAYER(Qwerty,
     //╭─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────╮
-        ___             &kp Q         &kp W         &kp E         &kp R         &kp T       ,   &kp Y         &kp U         &kp I         &kp O         &kp P           &mo SYS     ,
+        &ht ESC TAB     &kp Q         &kp W         &kp E         &kp R         &kp T       ,   &kp Y         &kp U         &kp I         &kp O         &kp P           &mo SYS     ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        OS_HT_START     &hml LGUI A   &hml LALT S   &hml LSHFT D  &hml LCTRL F  &kp G       ,   &kp H         &hmr LCTRL J  &hmr RSHFT K  &hmr LALT L   &hmr LGUI T     OS_HT_END   ,
+        OS_HT_START     &hml LGUI A   &hml LALT S   &hml LSHFT D  &hml LCTRL F  &kp G       ,   &kp H         &hmr LCTRL J  &hmr RSHFT K  &hmr LALT L   &hmr LGUI SEMI  OS_HT_END   ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        &kp LCTRL       &kp Z         &kp X         &kp C         &kp V         &kp B       ,   &kp N         &kp M         &comma_morph  &dot_morph    ___             &kp RWIN    ,
+        &kp LCTRL       &kp Z         &kp X         &kp C         &kp V         &kp B       ,   &kp N         &kp M         &comma_morph  &dot_morph    &kp SQT         &kp RWIN    ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
-                                                    APP_LAUNCHER  MAGIC_SHIFT   OS_HT_BSPC  ,   &lt SYM RET   &lt_spc NAV 0 SMART_NUM
+                                                    APP_LAUNCHER  MAGIC_SHIFT   &lt_bspc NAV 0, &lt NAV RET   &lt_spc SYM 0 SMART_NUM
     //                                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
 
