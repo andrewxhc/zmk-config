@@ -1,9 +1,9 @@
 #include <dt-bindings/zmk/oskey.h>
 
-// Runtime OS selection for zmk-oskey.
-#define OS_WIN_SEL &os_sel OS_WIN
-#define OS_MAC_SEL &os_sel OS_MAC
-#define OS_LIN_SEL &os_sel OS_LIN
+// Runtime OS selection for zmk-oskey and zmk-unicode.
+#define OS_WIN_SEL &select_win
+#define OS_MAC_SEL &select_mac
+#define OS_LIN_SEL &select_lin
 
 // OS-aware navigation helpers.
 #define OS_HT_START   &os_ht_start 0 0     // Tap: line start | Hold: document start.
@@ -21,15 +21,33 @@
     bt0_win: bluetooth_0_windows {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&bt BT_SEL 0>, <&os_sel OS_WIN>;
+      bindings = <&bt BT_SEL 0>, <OS_WIN_SEL>;
     };
 
     bt1_mac: bluetooth_1_macos {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&bt BT_SEL 1>, <&os_sel OS_MAC>;
+      bindings = <&bt BT_SEL 1>, <OS_MAC_SEL>;
     };
 #endif
+
+    select_win: select_windows {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&os_sel OS_WIN>, <&uc UC_SET_WIN_COMPOSE>;
+    };
+
+    select_mac: select_macos {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&os_sel OS_MAC>, <&uc UC_SET_MACOS>;
+    };
+
+    select_lin: select_linux {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&os_sel OS_LIN>, <&uc UC_SET_LINUX>;
+    };
 
     ss_win_mac: screenshot_window_mac {
       compatible = "zmk,behavior-macro";
