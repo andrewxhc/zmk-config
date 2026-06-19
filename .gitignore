@@ -1,8 +1,6 @@
 old_base.keymap
 old_zen.keymap.build
-.tmp-miryoku-zmk
-.tmp-msmaili-zmk-config
-.tmp-oskey
+references/urob-zmk-config/
 .direnv
 .west
 modules
