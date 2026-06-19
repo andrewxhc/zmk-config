@@ -74,7 +74,7 @@
     ok_launcher: os_key_launcher {
       compatible = "zmk,behavior-os-key";
       #binding-cells = <0>;
-      bindings = <&kp LA(SPACE)>, <&kp LG(SPACE)>, <&kp LGUI>;
+      bindings = <&kp LC(LA(P))>, <&kp LG(SPACE)>, <&kp LGUI>;
     };
 
     ok_dsk_prev: os_key_desktop_previous {
