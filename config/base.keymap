@@ -13,8 +13,6 @@
 #endif
 
 // Things to do:
-// keymap drawing script (dsend name change)
-// drawing not fixed
 // Urob's combos look good for now, potentially make my own later
 // Window management keys not finished
 
@@ -200,15 +198,15 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&ok_copy>, <&ok_cut>;
 ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 
 // Misc aliases. [TODO: clean up]
-#define CANCEL        &kp K_CANCEL     // Cancel caps-word & auto-layers.
-#define OS_DSK_PREV   &ok_dsk_prev     // Previous desktop.
-#define OS_DSK_NEXT   &ok_dsk_next     // Next desktop.
-#define OS_DSK_MGR    &ok_dsk_mgr      // Desktop manager.
-#define OS_TILE_LEFT  &ok_tile_left    // Tile window left.
-#define OS_TILE_RIGHT &ok_tile_right   // Tile window right.
-#define OS_TILE_FILL  &ok_tile_fill    // Fill/maximize window.
-#define OS_TILE_RST   &ok_tile_restore // Restore previous window size.
-#define OS_MON_NEXT   &ok_monitor_next // Move window to next monitor.
+#define CANCEL        &kp K_CANCEL        // Cancel caps-word & auto-layers.
+#define OS_DSK_PREV   &ok_dsk_prev        // Previous desktop.
+#define OS_DSK_NEXT   &ok_dsk_next        // Next desktop.
+#define OS_DSK_MGR    &ok_dsk_mgr         // Desktop manager.
+#define OS_TILE_LEFT  &ok_tile_left       // Tile window left.
+#define OS_TILE_RIGHT &ok_tile_right      // Tile window right.
+#define OS_TILE_FILL  &ok_tile_fill       // Fill/maximize window.
+#define OS_TILE_RST   &ok_tile_restore    // Restore previous window size.
+#define OS_MON_NEXT   &ok_monitor_next    // Move window to next monitor.
 #define OS_WIN_MIN    &ok_window_minimize // Minimize window.
 // #define PIN_WIN &kp LG(LC(LS(Q)))         // Pin window across desktops.
 // #define PIN_APP &kp LG(LC(LS(A)))         // Pin application across desktops.
