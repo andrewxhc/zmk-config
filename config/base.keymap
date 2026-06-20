@@ -15,6 +15,8 @@
 // Things to do:
 // Urob's combos look good for now, potentially make my own later
 // Window management keys not finished
+// Try local build instead of github actions
+// Ink display graphics
 
 #define DSEND 0
 #define QWERTY 1
