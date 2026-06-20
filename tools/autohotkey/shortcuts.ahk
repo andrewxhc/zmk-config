@@ -2,7 +2,6 @@
 #SingleInstance Force
 
 ; Possible to implement cycling between windows of the same application. 
-; Make sure to update startup folder file too
 
 LocalAppData := EnvGet("LOCALAPPDATA")
 
