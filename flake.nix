@@ -32,6 +32,9 @@
           mkdir -p $out/lib
           cp -d ${pkgs.stdenv.cc.cc.lib}/lib/libatomic.so* $out/lib/
         '';
+        ldLibraryPathHook = pkgs.lib.optionalString pkgs.stdenv.isLinux ''
+          export LD_LIBRARY_PATH="${libatomic}/lib";
+        '';
 
       in {
         default = pkgs.mkShellNoCC {
@@ -68,7 +71,7 @@
           shellHook = ''
             export ZMK_BUILD_DIR=$(pwd)/.build;
             export ZMK_SRC_DIR=$(pwd)/zmk/app;
-            export LD_LIBRARY_PATH="${libatomic}/lib";
+            ${ldLibraryPathHook}
           '';
         };
       }
