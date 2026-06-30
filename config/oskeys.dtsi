@@ -1,4 +1,5 @@
 #include <dt-bindings/zmk/oskey.h>
+#include <behaviors/oskey.dtsi>
 
 // Runtime OS selection for zmk-oskey and zmk-unicode.
 #define OS_WIN_SEL &select_win
@@ -60,11 +61,6 @@
   };
 
   behaviors {
-    os_sel: os_selector {
-      compatible = "zmk,behavior-os-selector";
-      #binding-cells = <1>;
-    };
-
     ok_app_mod: os_key_app_modifier {
       compatible = "zmk,behavior-os-key";
       #binding-cells = <0>;
@@ -131,42 +127,6 @@
       bindings = <&kp LG(DOWN)>, <&kp LG(M)>, <&kp LG(DOWN)>;
     };
 
-    ok_line_start: os_key_line_start {
-      compatible = "zmk,behavior-os-key";
-      #binding-cells = <0>;
-      bindings = <&kp HOME>, <&kp LG(LEFT)>, <&kp HOME>;
-    };
-
-    ok_line_end: os_key_line_end {
-      compatible = "zmk,behavior-os-key";
-      #binding-cells = <0>;
-      bindings = <&kp END>, <&kp LG(RIGHT)>, <&kp END>;
-    };
-
-    ok_doc_start: os_key_doc_start {
-      compatible = "zmk,behavior-os-key";
-      #binding-cells = <0>;
-      bindings = <&kp LC(HOME)>, <&kp LG(UP)>, <&kp LC(HOME)>;
-    };
-
-    ok_doc_end: os_key_doc_end {
-      compatible = "zmk,behavior-os-key";
-      #binding-cells = <0>;
-      bindings = <&kp LC(END)>, <&kp LG(DOWN)>, <&kp LC(END)>;
-    };
-
-    ok_prev_word: os_key_prev_word {
-      compatible = "zmk,behavior-os-key";
-      #binding-cells = <0>;
-      bindings = <&kp LC(LEFT)>, <&kp LA(LEFT)>, <&kp LC(LEFT)>;
-    };
-
-    ok_next_word: os_key_next_word {
-      compatible = "zmk,behavior-os-key";
-      #binding-cells = <0>;
-      bindings = <&kp LC(RIGHT)>, <&kp LA(RIGHT)>, <&kp LC(RIGHT)>;
-    };
-
     ok_up: os_key_up {
       compatible = "zmk,behavior-os-key";
       #binding-cells = <0>;
@@ -177,60 +137,6 @@
       compatible = "zmk,behavior-os-key";
       #binding-cells = <0>;
       bindings = <&kp LC(DOWN)>, <&kp LA(DOWN)>, <&kp LC(DOWN)>;
-    };
-
-    ok_undo: os_key_undo {
-      compatible = "zmk,behavior-os-key";
-      #binding-cells = <0>;
-      bindings = <&kp LC(Z)>, <&kp LG(Z)>, <&kp LC(Z)>;
-    };
-
-    ok_redo: os_key_redo {
-      compatible = "zmk,behavior-os-key";
-      #binding-cells = <0>;
-      bindings = <&kp LC(Y)>, <&kp LS(LG(Z))>, <&kp LS(LC(Z))>;
-    };
-
-    ok_cut: os_key_cut {
-      compatible = "zmk,behavior-os-key";
-      #binding-cells = <0>;
-      bindings = <&kp LC(X)>, <&kp LG(X)>, <&kp LC(X)>;
-    };
-
-    ok_copy: os_key_copy {
-      compatible = "zmk,behavior-os-key";
-      #binding-cells = <0>;
-      bindings = <&kp LC(C)>, <&kp LG(C)>, <&kp LC(C)>;
-    };
-
-    ok_paste: os_key_paste {
-      compatible = "zmk,behavior-os-key";
-      #binding-cells = <0>;
-      bindings = <&kp LC(V)>, <&kp LG(V)>, <&kp LC(V)>;
-    };
-
-    ok_sel_all: os_key_select_all {
-      compatible = "zmk,behavior-os-key";
-      #binding-cells = <0>;
-      bindings = <&kp LC(A)>, <&kp LG(A)>, <&kp LC(A)>;
-    };
-
-    ok_find: os_key_find {
-      compatible = "zmk,behavior-os-key";
-      #binding-cells = <0>;
-      bindings = <&kp LC(F)>, <&kp LG(F)>, <&kp LC(F)>;
-    };
-
-    ok_new_tab: os_key_new_tab {
-      compatible = "zmk,behavior-os-key";
-      #binding-cells = <0>;
-      bindings = <&kp LC(T)>, <&kp LG(T)>, <&kp LC(T)>;
-    };
-
-    ok_new_win: os_key_new_window {
-      compatible = "zmk,behavior-os-key";
-      #binding-cells = <0>;
-      bindings = <&kp LC(N)>, <&kp LG(N)>, <&kp LC(N)>;
     };
 
     ok_priv_win: os_key_private_window {
