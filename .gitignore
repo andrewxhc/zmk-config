@@ -1,11 +1,17 @@
-old_base.keymap
-old_zen.keymap.build
+# Local dev environment
+.direnv/
+
+# ZMK/west checkout and build artifacts
+.build/
+.west/
+firmware/
+modules/
+zephyr/
+zmk/
+
+# Local reference checkouts
 references/urob-zmk-config/
-.direnv
-.west
-modules
-firmware
-zephyr
-zmk
+
+# keymap-drawer intermediates
 draw/base.yaml
 draw/overview.yaml
