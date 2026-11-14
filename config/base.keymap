@@ -18,6 +18,9 @@
 // Try local build instead of github actions
 // Ink display graphics
 // Skip forward/backward functions instead of next/last media
+// Browser open/close tab
+// AI shortcuts
+// Rectangle shortcuts
 
 #define DSEND 0
 #define QWERTY 1
