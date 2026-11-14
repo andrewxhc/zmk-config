@@ -15,3 +15,6 @@ references/urob-zmk-config/
 # keymap-drawer intermediates
 draw/base.yaml
 draw/overview.yaml
+
+# macOS
+.DS_Store
