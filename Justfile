@@ -5,6 +5,7 @@ config := absolute_path('config')
 build := absolute_path('.build')
 out := absolute_path('firmware')
 draw := absolute_path('draw')
+os_persist := absolute_path('os-persist')
 
 build_matrix := "build.yaml"
 
@@ -24,7 +25,8 @@ _build_single $board $shield $snippet $artifact cmake_args *west_args:
 
     echo "Building firmware for $artifact..."
     west build -s zmk/app -d "$build_dir" -b $board {{ west_args }} ${snippet:+-S "$snippet"} -- \
-        -DZMK_CONFIG="{{ config }}" ${shield:+-DSHIELD="$shield"} {{ cmake_args }}
+        -DZMK_CONFIG="{{ config }}" -DZMK_EXTRA_MODULES="{{ os_persist }}" \
+        ${shield:+-DSHIELD="$shield"} {{ cmake_args }}
 
     if [[ -f "$build_dir/zephyr/zmk.uf2" ]]; then
         mkdir -p "{{ out }}" && cp "$build_dir/zephyr/zmk.uf2" "{{ out }}/$artifact.uf2"
