@@ -206,6 +206,9 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 #define OS_TILE_RST   &ok_tile_restore    // Restore previous window size.
 #define OS_MON_NEXT   &ok_monitor_next    // Move window to next monitor.
 #define OS_WIN_MIN    &ok_window_minimize // Minimize window.
+#define TAB_PREV      &kp LC(LS(TAB))     // Previous tab.
+#define TAB_NEXT      &kp LC(TAB)         // Next tab.
+#define ZOOM_RST      &ok_zoom_reset      // Reset zoom.
 // #define PIN_WIN &kp LG(LC(LS(Q)))         // Pin window across desktops.
 // #define PIN_APP &kp LG(LC(LS(A)))         // Pin application across desktops.
 
@@ -277,11 +280,11 @@ ZMK_BASE_LAYER(Sym,
 // ADD SHORTCUTS TO THIS LAYER, fn layer most are duplicate/not needed, migrate to this
 ZMK_BASE_LAYER(Nav,
     //╭─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────╮
-        ___             &ok_ss_full   &ok_ss_win    &ok_ss_region ___           ___         ,   ___           &ok_addr_bar  &kp PG_UP     &kp PG_DN     &kp INS         ___         ,
+        ___             &ok_ss_full   &ok_ss_win    &ok_ss_region TAB_PREV      TAB_NEXT    ,   &ok_zoom_in   &ok_addr_bar  &mkp MB4      &mkp MB5      &ok_reload      &kp PG_UP   ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        ___             &ok_redo      ___           &ok_sel_all   &ok_find      ___         ,   ___           OS_HT_LEFT    OS_HT_UP      OS_HT_DOWN    OS_HT_RIGHT     ___         ,
+        ___             &ok_redo      ___           &ok_sel_all   &ok_find      &ok_close   ,   ZOOM_RST      OS_HT_LEFT    OS_HT_UP      OS_HT_DOWN    OS_HT_RIGHT     ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        ___             &ok_undo      &ok_cut       &ok_copy      &ok_paste     ___         ,   ___           &ok_new_tab   &ok_new_win   &ok_priv_win  ___             ___         ,
+        ___             &ok_undo      &ok_cut       &ok_copy      &ok_paste     &kp INS     ,   &ok_zoom_out  &ok_new_tab   &ok_new_win   &ok_priv_win  &ok_reopen_tab  &kp PG_DN   ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯
                                                     ___           ___           ___         ,   ___           ___           ___
     //                                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
@@ -339,7 +342,7 @@ ZMK_BASE_LAYER(App,
     //╭─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────╮
         &swapper        &kp LS(TAB)   OS_DSK_PREV   OS_DSK_MGR    OS_DSK_NEXT   ___         ,   MEH_A         MEH_B         MEH_C         MEH_D         MEH_E           ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
-        &window_swapper &kp LS(TAB)   OS_TILE_LEFT  OS_TILE_FILL  OS_TILE_RIGHT ___         ,   MEH_F         MEH_G         MEH_H         MEH_I         MEH_J           ___         ,
+        &window_swapper &kp LS(TAB)   OS_TILE_LEFT  OS_TILE_FILL  OS_TILE_RIGHT OS_HT_QUIT  ,   MEH_F         MEH_G         MEH_H         MEH_I         MEH_J           ___         ,
     //├─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┤
         ___             ___           OS_MON_NEXT   OS_WIN_MIN    OS_TILE_RST   ___         ,   MEH_K         MEH_L         MEH_M         MEH_N         MEH_O           ___         ,
     //╰─────────────╯ ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯ ╰─────────────╯

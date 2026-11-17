@@ -6,7 +6,6 @@ See [.github/README.md](.github/README.md) for an overview of this config.
 
 - [ ] Finish window-management keys (APP layer: `OS_TILE_*`, `OS_MON_NEXT`, `OS_WIN_MIN`; pin-window alias is commented out)
 - [ ] Rectangle (macOS) shortcuts
-- [ ] Browser open/close tab keys
 - [ ] AI shortcuts
 - [ ] Media skip forward/backward instead of next/previous track (`C_PREV`/`C_NEXT` on the SYS layer)
 - [ ] Ink display graphics
@@ -23,4 +22,5 @@ See [.github/README.md](.github/README.md) for an overview of this config.
 
 ## Done
 
+- [x] Browser keys on NAV (tabs, reload, back/forward, zoom) and hold-to-quit on APP
 - [x] Local build instead of GitHub Actions (`nix develop --command just build zen`, or `../build-zen-mac.sh`)

@@ -15,6 +15,7 @@
 #define OS_HT_DOWN    &os_ht_down 0 DOWN   // Tap: down       | Hold: Ctrl/Option+Down.
 #define OS_HT_BSPC    &os_ht_bspc 0 BSPC   // Tap: backspace  | Hold: delete previous word.
 #define OS_HT_DEL     &os_ht_del 0 DEL     // Tap: delete     | Hold: delete next word.
+#define OS_HT_QUIT    &os_ht_quit 0 0      // Tap: nothing    | Hold: quit app.
 
 / {
   macros {
@@ -151,6 +152,12 @@
       bindings = <&kp LA(D)>, <&kp LG(L)>, <&kp LC(L)>;
     };
 
+    ok_reload: os_key_reload {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(R)>, <&kp LG(R)>, <&kp LC(R)>;
+    };
+
     ok_ss_full: os_key_screenshot_full {
       compatible = "zmk,behavior-os-key";
       #binding-cells = <0>;
@@ -251,6 +258,14 @@
       quick-tap-ms = <220>;
       tapping-term-ms = <220>;
       bindings = <&ok_word_del>, <&kp>;
+    };
+
+    os_ht_quit: os_ht_quit {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <500>;
+      bindings = <&ok_quit>, <&none>;
     };
   };
 };
