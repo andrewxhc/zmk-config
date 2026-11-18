@@ -173,7 +173,7 @@
     ok_ss_region: os_key_screenshot_region {
       compatible = "zmk,behavior-os-key";
       #binding-cells = <0>;
-      bindings = <&kp LG(LS(S))>, <&kp LS(LG(N4))>, <&kp LS(PSCRN)>;
+      bindings = <&kp LG(LS(S))>, <&kp LC(LS(LG(N4)))>, <&kp LS(PSCRN)>;
     };
 
     ok_word_bspc: os_key_word_bspc {
