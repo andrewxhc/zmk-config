@@ -7,6 +7,7 @@ See [.github/README.md](.github/README.md) for an overview of this config.
 - [ ] Finish window-management keys (APP layer: `OS_TILE_*`, `OS_MON_NEXT`, `OS_WIN_MIN`; pin-window alias is commented out)
 - [ ] Rectangle (macOS) shortcuts
 - [ ] AI shortcuts
+- [ ] Add a shortcut to switch between keyboard input languages
 - [ ] Media skip forward/backward instead of next/previous track (`C_PREV`/`C_NEXT` on the SYS layer)
 - [ ] Ink display graphics
 
