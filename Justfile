@@ -49,7 +49,7 @@ build expr *west_args:
 clean:
     rm -rf {{ build }} {{ out }}
 
-# clear all automatically generated files
+# clear build outputs, west metadata, and the ZMK checkout
 clean-all: clean
     rm -rf .west zmk
 
