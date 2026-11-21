@@ -14,7 +14,7 @@ See [.github/README.md](.github/README.md) for an overview of this config.
 
 ## Tuning
 
-- [ ] Space key: re-evaluate `lt_spc` hold-tap — symbol rolls after space resolved as space + letter on balanced. Trying hold-preferred + `require-prior-idle-ms = <125>` (2026-11-21; also tried 100, 150 and 200). If symbols right after a letter come out as space, shorten the guard; if stray symbols appear while typing, lengthen it.
+- [ ] Space key: re-evaluate `lt_spc` hold-tap — symbol rolls after space resolved as space + letter on balanced. Trying hold-preferred + `require-prior-idle-ms = <150>` (2026-11-21; also tried 100, 125 and 200). If symbols right after a letter come out as space, shorten the guard; if stray symbols appear while typing, lengthen it.
 
 ## Cleanup
 
