@@ -200,8 +200,9 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&ok_copy>, <&ok_cut>;
 // Sticky shift + leader.
 ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 
-// Misc aliases.
 #define CANCEL        &kp K_CANCEL        // Cancel caps-word & auto-layers.
+
+// Desktop and window shortcuts.
 #define OS_DSK_PREV   &ok_dsk_prev        // Previous desktop.
 #define OS_DSK_NEXT   &ok_dsk_next        // Next desktop.
 #define OS_DSK_MGR    &ok_dsk_mgr         // Desktop manager.
@@ -211,11 +212,13 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 #define OS_TILE_RST   &ok_tile_restore    // Restore previous window size.
 #define OS_MON_NEXT   &ok_monitor_next    // Move window to next monitor.
 #define OS_WIN_MIN    &ok_window_minimize // Minimize window.
+// #define PIN_WIN &kp LG(LC(LS(Q)))         // Pin window across desktops.
+// #define PIN_APP &kp LG(LC(LS(A)))         // Pin application across desktops.
+
+// Browser shortcuts.
 #define TAB_PREV      &kp LC(LS(TAB))     // Previous tab.
 #define TAB_NEXT      &kp LC(TAB)         // Next tab.
 #define ZOOM_RST      &ok_zoom_reset      // Reset zoom.
-// #define PIN_WIN &kp LG(LC(LS(Q)))         // Pin window across desktops.
-// #define PIN_APP &kp LG(LC(LS(A)))         // Pin application across desktops.
 
 // Meh key shortcuts.
 #define MEH(k)       &kp LC(LS(LA(k)))
