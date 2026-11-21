@@ -160,18 +160,21 @@ text.br, use.br { fill: var(--color-nav); }
 <text x="-22" y="-22" class="key tl"><tspan style="font-size: 78%">Next Desk</tspan></text>
 <text x="22" y="-22" class="key tr">$</text>
 <text x="-22" y="22" class="key bl">9</text>
+<text x="22" y="22" class="key br"><tspan style="font-size: 64%">Ctl+Sft+Tab</tspan></text>
 </g>
 <g transform="translate(308, 42)" class="key keypos-5">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">V</text>
 <text x="22" y="-22" class="key tr">^</text>
 <text x="-22" y="22" class="key bl">*</text>
+<text x="22" y="22" class="key br">Ctl+Tab</text>
 </g>
 <g transform="translate(532, 42)" class="key keypos-6">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">&#x27;</text>
 <text x="-22" y="-22" class="key tl">Meh+A</text>
 <text x="22" y="-22" class="key tr">&quot;</text>
+<text x="22" y="22" class="key br"><tspan style="font-size: 64%">&amp;ok_zoom_in</tspan></text>
 </g>
 <g transform="translate(588, 35)" class="key keypos-7">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -185,25 +188,26 @@ text.br, use.br { fill: var(--color-nav); }
 <text x="0" y="1" class="key tap">U</text>
 <text x="-22" y="-22" class="key tl">Meh+C</text>
 <text x="22" y="-22" class="key tr">)</text>
-<text x="22" y="22" class="key br">PgUp</text>
+<text x="22" y="22" class="key br"><tspan style="font-size: 70%">Back Click</tspan></text>
 </g>
 <g transform="translate(700, 35)" class="key keypos-9">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">P</text>
 <text x="-22" y="-22" class="key tl">Meh+D</text>
 <text x="22" y="-22" class="key tr">{ [</text>
-<text x="22" y="22" class="key br">PgDn</text>
+<text x="22" y="22" class="key br"><tspan style="font-size: 64%">Forward Cl…</tspan></text>
 </g>
 <g transform="translate(756, 49)" class="key keypos-10">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">Q</text>
 <text x="-22" y="-22" class="key tl">Meh+E</text>
 <text x="22" y="-22" class="key tr">} ]</text>
-<text x="22" y="22" class="key br">Ins</text>
+<text x="22" y="22" class="key br"><tspan style="font-size: 70%">&amp;ok_reload</tspan></text>
 </g>
 <g transform="translate(812, 49)" class="key keypos-11">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="1" class="key tap">Sys</text>
+<text x="0" y="1" class="key tap">Fig</text>
+<text x="22" y="22" class="key br">PgUp</text>
 </g>
 <g transform="translate(28, 105)" class="key keypos-12">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -216,7 +220,7 @@ text.br, use.br { fill: var(--color-nav); }
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">R</text>
 <text x="0" y="22" class="key hold">Gui</text>
-<text x="-22" y="-22" class="key tl">Shift</text>
+<text x="-22" y="-22" class="key tl">PWin</text>
 <text x="22" y="-22" class="key tr">+</text>
 <text x="-22" y="22" class="key bl">+</text>
 <text x="22" y="22" class="key br">Redo</text>
@@ -252,12 +256,14 @@ text.br, use.br { fill: var(--color-nav); }
 <text x="0" y="1" class="key tap">G</text>
 <text x="22" y="-22" class="key tr">=</text>
 <text x="-22" y="22" class="key bl">=</text>
+<text x="22" y="22" class="key br"><tspan style="font-size: 78%">&amp;ok_close</tspan></text>
 </g>
 <g transform="translate(532, 98)" class="key keypos-18">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">.</text>
 <text x="-22" y="-22" class="key tl">Meh+F</text>
 <text x="22" y="-22" class="key tr">!</text>
+<text x="22" y="22" class="key br"><tspan style="font-size: 64%">&amp;ok_zoom_r…</tspan></text>
 </g>
 <g transform="translate(588, 91)" class="key keypos-19">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -332,12 +338,14 @@ text.br, use.br { fill: var(--color-nav); }
 <text x="0" y="1" class="key tap">B</text>
 <text x="22" y="-22" class="key tr">\</text>
 <text x="-22" y="22" class="key bl">/</text>
+<text x="22" y="22" class="key br">Ins</text>
 </g>
 <g transform="translate(532, 154)" class="key keypos-30">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">,</text>
 <text x="-22" y="-22" class="key tl">Meh+K</text>
 <text x="22" y="-22" class="key tr">?</text>
+<text x="22" y="22" class="key br"><tspan style="font-size: 64%">&amp;ok_zoom_o…</tspan></text>
 </g>
 <g transform="translate(588, 147)" class="key keypos-31">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -365,10 +373,12 @@ text.br, use.br { fill: var(--color-nav); }
 <text x="0" y="1" class="key tap">J</text>
 <text x="-22" y="-22" class="key tl">Meh+O</text>
 <text x="22" y="-22" class="key tr">&gt;</text>
+<text x="22" y="22" class="key br"><tspan style="font-size: 64%">&amp;ok_reopen…</tspan></text>
 </g>
 <g transform="translate(812, 161)" class="key keypos-35">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="1" class="key tap">RWIN</text>
+<text x="22" y="22" class="key br">PgDn</text>
 </g>
 <g transform="translate(224, 205)" class="key keypos-36">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>

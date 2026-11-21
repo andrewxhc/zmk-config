@@ -7,6 +7,9 @@ parse_config:
     #define CONFIG_WIRELESS
 
   raw_binding_map:
+    "&ok_lang_en": English
+    "&ok_lang_pinyin": Pinyin
+    "&ok_lang_next": Next Input
     "&sys_reset": Reset
     "&bootloader": Boot
     "&caps_word": Caps Word

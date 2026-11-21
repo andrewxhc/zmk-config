@@ -62,6 +62,24 @@
   };
 
   behaviors {
+    ok_lang_en: os_key_language_en {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(LS(N1))>, <&kp F18>, <&kp F18>;
+    };
+
+    ok_lang_pinyin: os_key_language_pinyin {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LC(LS(N2))>, <&kp F19>, <&kp F19>;
+    };
+
+    ok_lang_next: os_key_language_next {
+      compatible = "zmk,behavior-os-key";
+      #binding-cells = <0>;
+      bindings = <&kp LG(SPACE)>, <&kp LC(LA(SPACE))>, <&kp LG(SPACE)>;
+    };
+
     ok_app_mod: os_key_app_modifier {
       compatible = "zmk,behavior-os-key";
       #binding-cells = <0>;

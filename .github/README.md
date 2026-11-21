@@ -26,15 +26,29 @@ this file (`.github/README.md`) instead.
 | # | Layer | Reached by |
 |---|---|---|
 | 0 | Dsend | default |
-| 1 | QWERTY | SYS layer |
+| 1 | QWERTY | FIG layer |
 | 2 | SYM | hold Space (RH1) |
 | 3 | NAV | hold Backspace (LH0) or Enter (RH0) |
 | 4 | NUM | hold RH2; tap for num-word |
-| 5 | SYS | top-right key (RT5) |
-| 6 | MOU | mouse combo or SYS layer |
-| 7 | BTN | SYS layer |
+| 5 | FIG (configuration) | hold RT5 |
+| 6 | MOU | mouse combo or FIG + LB0 (Smart Mouse) |
+| 7 | BTN | FIG + LB1 (Smart Button) |
 | 8 | APP | hold LH2 |
 | 9 | FN | APP + NUM together |
+| 10 | MNT (maintenance) | hold RT3 on FIG |
+
+On MNT, tap LB0/RB0 to restart the left/right half or LB1/RB1 to enter its bootloader.
+
+### FIG language keys
+
+| OS | LM4 · English | LM3 · Pinyin | LM2 · Cycle |
+|---|---|---|---|
+| macOS | F18 | F19 | Control+Option+Space |
+| Windows | Ctrl+Shift+1 | Ctrl+Shift+2 | Win+Space |
+| Linux (GNOME/IBus) | F18 | F19 | Super+Space |
+
+On macOS, install `macism` with `brew install laishulu/homebrew/macism` and use the [Zen Karabiner rules](https://github.com/andrewxhc/keyboard-host-tools/blob/main/karabiner/karabiner.json).
+On Windows or Linux, assign the English and Pinyin shortcuts in the host settings.
 
 ## Building
 
