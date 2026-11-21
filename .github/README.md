@@ -67,7 +67,7 @@ nix develop --command just build zen
 or run `../build-zen-mac.sh` from this folder, which does the same and prints where the files are.
 Firmware lands in `firmware/`. Zephyr can't build from a path that contains a space.
 
-GitHub Actions also builds on every push (see [`build.yaml`](../build.yaml)).
+GitHub Actions builds both halves when a push changes `config/`, `os-persist/`, or `build.yaml` (see the [firmware workflow](workflows/build-nix.yml)).
 
 ## Flashing
 

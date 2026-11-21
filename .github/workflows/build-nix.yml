@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - config/**
+      - os-persist/**
       - build.yaml
 
 jobs:
