@@ -6,6 +6,7 @@ See [.github/README.md](.github/README.md) for an overview of this config.
 
 - [ ] Finish window-management keys (APP layer: `OS_TILE_*`, `OS_MON_NEXT`, `OS_WIN_MIN`; pin-window alias is commented out)
 - [ ] Rectangle (macOS) shortcuts
+- [ ] Use Hammerspoon to arrange windows when the Mac connects to or disconnects from the two Dell monitors.
 - [ ] AI shortcuts
 - [ ] Verify FIG English, Pinyin and Cycle on Windows and Linux
 - [ ] Media skip forward/backward instead of next/previous track (`C_PREV`/`C_NEXT` on the FIG layer)
